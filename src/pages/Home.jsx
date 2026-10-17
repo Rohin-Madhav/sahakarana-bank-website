@@ -735,13 +735,13 @@ export default function Home() {
 
             {/* Call button */}
             <a
-              href={`tel:${item.phone.replace(/\s/g, "")}`}
+              href={`tel:${(item.phone || "").replace(/\s/g, "")}`}
               className="mt-5 inline-flex items-center justify-between gap-3 rounded-xl bg-[#F4FAFC] px-4 py-3 text-sm font-semibold text-[#00516A] ring-1 ring-[#D5E9ED] transition hover:bg-[#008BA5] hover:text-white hover:ring-[#008BA5]"
               aria-label={`Call ${item.title}, ${item.location}`}
             >
               <span className="flex items-center gap-2">
                 <Phone size={16} />
-                {item.phone}
+                {item.phone || "Phone number unavailable"}
               </span>
               <ArrowUpRight
                 size={16}
