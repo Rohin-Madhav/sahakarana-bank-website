@@ -99,6 +99,27 @@ const facilities = [
 
 const initiatives = [
   {
+    title: "Neethi Consumer Store",
+    category: "Consumer Services",
+    location: "Orkkatteri",
+    phone: "0496 2544323",
+    icon: Building2,
+  },
+  {
+    title: "Neethi Medical Store",
+    category: "Healthcare",
+    location: "Azhiyur Chungam",
+    phone: "7736706770",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Neethi Medical Lab",
+    category: "Diagnostic Services",
+    location: "Orkkatteri",
+    phone: "9446267220",
+    icon: CircleCheck,
+  },
+  {
     title: "Education Support",
     image: educationImage,
     description:
