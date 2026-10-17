@@ -10,6 +10,7 @@ const navItems = [
     children: [
       { label: "Who We Are", to: "/about" },
       { label: "Board of Directors", to: "/board-of-directors" },
+      { label: "Quality Policy", to: "/quality-policy" },
     ],
   },
   { label: "Facilities", to: "/facilities" },
@@ -97,14 +98,14 @@ export default function Navbar() {
           <img
             src={bankLogo}
             alt="Shakarana Bank logo"
-            className="h-12 w-auto max-w-40 object-contain"
+            className="h-18 w-auto max-w-40 object-contain"
           />
 
           <div className="hidden sm:block">
             <p className="text-base font-bold tracking-wide text-[#00516A]">
-              SAKARANA BANK
+              Vatakara Block
             </p>
-            <p className="text-xs text-[#52727D]">Service Co-operative Bank</p>
+            <p className="text-xs text-[#52727D]">Employees Co-op Societyk</p>
           </div>
         </Link>
 

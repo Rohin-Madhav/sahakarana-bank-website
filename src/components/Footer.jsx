@@ -33,13 +33,13 @@ const Footer = () => {
             </h3>
             <div className="grid grid-cols-2 gap-3 text-sm text-white/80">
               {[
-                ["About the Society", "/about"],
-                ["Quality Policy", "/quality-policy"],
+                ["About Us", "/about"],
                 ["Facilities", "/facilities"],
                 ["Deposits", "/deposits"],
                 ["Loans", "/loans"],
                 ["News & Events", "/news-events"],
                 ["Gallery", "/gallery"],
+                ["Board of Directors", "/board-of-directors"],
                 ["Contact Us", "/contact"],
               ].map(([label, to]) => (
                 <Link

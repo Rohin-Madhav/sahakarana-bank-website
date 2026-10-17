@@ -2,9 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import BoardOfDirectors from "./pages/BoardOfDirectors";
-import Facilities from "./pages/Facilities";
 
 const App = () => {
   return (
@@ -12,9 +9,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="board-of-directors" element={<BoardOfDirectors />} />
-          <Route path="facilities" element={<Facilities />} />
         </Route>
       </Routes>
     </BrowserRouter>
