@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link } from "react-router-dom";
 import familyImage from "../assets/Family-Savings.webp";
 import interestRatesImage from "../assets/interest-rates-reference.png";
@@ -185,7 +185,7 @@ export default function Home() {
   const [activeDeposit, setActiveDeposit] = useState(-1);
   return (
     <main className="overflow-hidden bg-white font-sans text-[#234956]">
-      {/* HERO — full-width family background */}
+      {/* HERO â€” full-width family background */}
 
       <section className="relative isolate overflow-hidden bg-[#00303F]">
         {/* Background family image */}
@@ -276,7 +276,7 @@ export default function Home() {
               to="/news-events"
               className="font-semibold text-[#008BA5] hover:underline"
             >
-              View all →
+              View all â†’
             </Link>
           </div>
         </div>
@@ -387,10 +387,10 @@ export default function Home() {
                     aria-hidden={copy === 2}
                   >
                     {[
-                      { period: "15–45 Days", rate: "6.25%" },
-                      { period: "46–90 Days", rate: "6.75%" },
-                      { period: "90–180 Days", rate: "7.25%" },
-                      { period: "181–364 Days", rate: "7.75%" },
+                      { period: "15â€“45 Days", rate: "6.25%" },
+                      { period: "46â€“90 Days", rate: "6.75%" },
+                      { period: "90â€“180 Days", rate: "7.25%" },
+                      { period: "181â€“364 Days", rate: "7.75%" },
                       { period: "Above 1 Year", rate: "8.00%" },
                       { period: "Senior Citizen", rate: "0.5% extra" },
                     ].map((item) => (
@@ -402,7 +402,7 @@ export default function Home() {
                         <strong className="whitespace-nowrap text-[#008BA5]">
                           {item.rate}
                         </strong>
-                        <span className="ml-3 text-gray-300">•</span>
+                        <span className="ml-3 text-gray-300">â€¢</span>
                       </div>
                     ))}
                   </div>
@@ -416,7 +416,7 @@ export default function Home() {
             to="/news-events"
             className="shrink-0 text-sm font-semibold text-[#008BA5] transition hover:text-[#00516A] hover:underline"
           >
-            View all →
+            View all â†’
           </Link>
         </div>
 
@@ -609,7 +609,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INTEREST RATES — */}
+      {/* INTEREST RATES â€” */}
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="Interest Rates" title="Fixed Deposit" />
@@ -693,7 +693,7 @@ export default function Home() {
     />
 
     <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-      {institutions.map((item, index) => {
+      {initiatives.map((item, index) => {
         const Icon = item.icon;
 
         return (
@@ -760,7 +760,7 @@ export default function Home() {
 </section>
 
 
-      {/* AWARDS — matching the supplied reference layout and image proportions */}
+      {/* AWARDS â€” matching the supplied reference layout and image proportions */}
       {/* <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="Awards" title="Our Achievements" centered />
@@ -847,3 +847,4 @@ export default function Home() {
     </main>
   );
 }
+
