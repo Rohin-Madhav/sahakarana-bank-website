@@ -28,42 +28,7 @@ import {
   CalendarDays,
   Building2,
   CircleCheck,
-  ShoppingBasket,
-  BriefcaseMedical,
-  FlaskConical,
-  Microscope,
 } from "lucide-react";
-
-const institutions = [
-  {
-    title: "Neethi Consumer Store",
-    category: "Consumer",
-    location: "Orkkatteri",
-    phone: "0496 2544323",
-    icon: ShoppingBasket,
-  },
-  {
-    title: "Neethi Medical Store",
-    category: "Medical",
-    location: "Azhiyur Chungam",
-    phone: "7736706770",
-    icon: BriefcaseMedical,
-  },
-  {
-    title: "Neethi Medical Lab",
-    category: "Laboratory",
-    location: "Orkkatteri",
-    phone: "9446267220",
-    icon: FlaskConical,
-  },
-  {
-    title: "Neethi Medical Lab",
-    category: "Laboratory",
-    location: "Kannookkara",
-    phone: "9497304002",
-    icon: Microscope,
-  },
-];
 
 const deposits = [
   {
@@ -283,6 +248,108 @@ export default function Home() {
           </h2>
 
           <div className="hidden h-10 w-px shrink-0 bg-gray-200 md:block" />
+          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-2 text-sm leading-6 text-gray-600">
+            <span className="font-semibold text-[#00516A]">Bank Updates:</span>
+            <span>Explore our banking services and announcements.</span>
+            <Link
+              to="/news-events"
+              className="font-semibold text-[#008BA5] hover:underline"
+            >
+              View all →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+          <div className="relative">
+            <div className="absolute -left-4 -top-4 h-28 w-28 rounded-tl-[40px] bg-[#BDECF2]" />
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#00516A] to-[#008BA5]">
+              <img
+                src={whoWeAreImage}
+                alt="Who We Are"
+                className="h-[340px] w-full object-cover md:h-[440px]"
+                loading="lazy"
+              />
+            </div>
+            <div className="absolute -bottom-5 -right-3 hidden rounded-xl bg-white p-5 shadow-xl sm:block">
+              <ShieldCheck size={28} className="mb-2 text-[#008BA5]" />
+              <p className="font-semibold text-[#00516A]">Trust & Service</p>
+              <p className="mt-1 text-sm text-[#52727D]">
+                Our commitment to you
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <SectionHeading
+              eyebrow="Who We Are"
+              title="Banking Built Around Your Community"
+              description="We aim to provide accessible banking services while supporting savings, financial wellbeing and community development."
+            />
+            <p className="mb-5 text-sm leading-8 text-[#52727D] md:text-base">
+              At Shakarana Bank, we believe strong communities begin with
+              financial confidence. Explore our deposit options, banking
+              facilities and services to find what meets your needs.
+            </p>
+            <div className="mb-8 space-y-3">
+              {[
+                "Customer-focused service",
+                "Accessible banking information",
+                "Commitment to community development",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CircleCheck size={19} className="shrink-0 text-[#008BA5]" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <SectionLink to="/about">Discover Our Bank</SectionLink>
+          </div>
+        </div>
+      </section>
+
+{/* DEPOSIT SCHEME TILES */}
+<section className="relative z-20 -mt-16 -mb-16 bg-transparent px-5 md:px-8">
+  <div className="mx-auto grid max-w-5xl grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-6">
+    {deposits.map((item, index) => {
+      const Icon = item.icon;
+      const active = activeDeposit === index;
+
+      const colors = [
+        "bg-[#00516A] text-white",
+        "bg-[#D9F4F8] text-[#00465C]",
+        "bg-[#008BA5] text-white",
+        "bg-[#BCECF9] text-[#00465C]",
+        "bg-[#006D85] text-white",
+        "bg-[#E8F8FA] text-[#00465C]",
+      ];
+
+      return (
+        <button
+          type="button"
+          key={item.title}
+          onClick={() => setActiveDeposit(active ? -1 : index)}
+          aria-pressed={active}
+          className={`group flex h-[150px] w-full min-w-0 flex-col items-center justify-center rounded-none border-0 px-2 text-center transition-all duration-300 hover:relative hover:z-30 hover:brightness-95 hover:shadow-lg ${
+            active
+              ? "bg-[#003746] text-white"
+              : colors[index % colors.length]
+          }`}
+        >
+          <Icon
+            size={24}
+            className="mb-2 shrink-0 transition-transform duration-300 group-hover:scale-110"
+          />
+
+          <span className="text-xs font-bold leading-snug sm:text-sm">
+            {item.title}
+          </span>
+        </button>
+      );
+    })}
 
           {/* Continuous horizontal ticker */}
           <div className="group flex min-w-0 flex-1 items-center gap-3 overflow-hidden">
