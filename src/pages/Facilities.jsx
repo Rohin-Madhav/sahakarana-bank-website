@@ -1,4 +1,3 @@
-
 import React from "react";
 import facilitiesBg from "../assets/facilities-bg.webp";
 import { Link } from "react-router-dom";
@@ -116,20 +115,9 @@ const branches = [
   },
 ];
 
-function SectionIntro({
-  eyebrow,
-  title,
-  description,
-  centered = false,
-}) {
+function SectionIntro({ eyebrow, title, description, centered = false }) {
   return (
-    <div
-      className={
-        centered
-          ? "mx-auto max-w-2xl text-center"
-          : "max-w-2xl"
-      }
-    >
+    <div className={centered ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#008BA5] sm:text-xs">
         {eyebrow}
       </p>
@@ -150,18 +138,17 @@ function SectionIntro({
 export default function Facilities() {
   return (
     <main className="overflow-hidden bg-white text-[#234956]">
-      
       {/* HERO WITH BACKGROUND IMAGE */}
       <section className="relative isolate overflow-hidden">
         {/* Background image */}
         {/* Background image */}
-<div
-  className="absolute inset-0 -z-20 bg-cover bg-center"
-  style={{
-    backgroundImage: `url(${facilitiesBg})`,
-  }}
-  aria-hidden="true"
-/>
+        <div
+          className="absolute inset-0 -z-20 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${facilitiesBg})`,
+          }}
+          aria-hidden="true"
+        />
 
         {/* Teal and white overlay */}
         <div
@@ -172,7 +159,7 @@ export default function Facilities() {
         <div className="mx-auto flex min-h-[340px] max-w-7xl items-center px-5 py-14 sm:min-h-[390px] sm:px-8 sm:py-16 lg:min-h-[430px] lg:py-20">
           <div className="max-w-2xl">
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.22em] text-[#008BA5] sm:text-xs">
-              Sahakarana Bank · Facilities
+              Vatakara Block Employees Co-op Society · Facilities
             </p>
 
             <h1 className="max-w-xl text-3xl font-bold leading-tight tracking-tight text-[#063B4A] sm:text-4xl lg:text-5xl">
@@ -183,27 +170,9 @@ export default function Facilities() {
               Convenient banking, dependable service and community-focused
               facilities designed to support our members in everyday life.
             </p>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="#banking-facilities"
-                className="inline-flex items-center gap-2 rounded-lg bg-[#00516A] px-5 py-3 text-sm font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-[#008BA5]"
-              >
-                Explore Facilities
-                <ArrowRight size={16} />
-              </a>
-
-              <a
-                href="#branches"
-                className="inline-flex items-center rounded-lg border border-[#00516A]/30 bg-white/80 px-5 py-3 text-sm font-semibold text-[#00516A] backdrop-blur-sm transition hover:bg-white"
-              >
-                Our Branches
-              </a>
-            </div>
           </div>
         </div>
       </section>
-
 
       {/* BANKING FACILITIES */}
       <section
@@ -319,13 +288,11 @@ export default function Facilities() {
                   </div>
 
                   <div>
-                    <h3 className="text-base font-bold">
-                      Head Office
-                    </h3>
+                    <h3 className="text-base font-bold">Head Office</h3>
                     <p className="mt-1 text-sm leading-6 text-white/80">
-                      Vatakara Block Employees Co-operative Society Ltd.
-                      No. D2394, Orkkatteri P.O., Kozhikode District,
-                      Kerala - 673501.
+                      Vatakara Block Employees Co-operative Society Ltd. No.
+                      D2394, Orkkatteri P.O., Kozhikode District, Kerala -
+                      673501.
                     </p>
                     <a
                       href="tel:04962546120"

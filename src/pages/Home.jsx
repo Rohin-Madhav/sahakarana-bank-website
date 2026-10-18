@@ -28,7 +28,42 @@ import {
   CalendarDays,
   Building2,
   CircleCheck,
+  ShoppingBasket,
+  BriefcaseMedical,
+  FlaskConical,
+  Microscope,
 } from "lucide-react";
+
+const institutions = [
+  {
+    title: "Neethi Consumer Store",
+    category: "Consumer",
+    location: "Orkkatteri",
+    phone: "0496 2544323",
+    icon: ShoppingBasket,
+  },
+  {
+    title: "Neethi Medical Store",
+    category: "Medical",
+    location: "Azhiyur Chungam",
+    phone: "7736706770",
+    icon: BriefcaseMedical,
+  },
+  {
+    title: "Neethi Medical Lab",
+    category: "Laboratory",
+    location: "Orkkatteri",
+    phone: "9446267220",
+    icon: FlaskConical,
+  },
+  {
+    title: "Neethi Medical Lab",
+    category: "Laboratory",
+    location: "Kannookkara",
+    phone: "9497304002",
+    icon: Microscope,
+  },
+];
 
 const deposits = [
   {
@@ -99,27 +134,6 @@ const facilities = [
 
 const initiatives = [
   {
-    title: "Neethi Consumer Store",
-    category: "Consumer Services",
-    location: "Orkkatteri",
-    phone: "0496 2544323",
-    icon: Building2,
-  },
-  {
-    title: "Neethi Medical Store",
-    category: "Healthcare",
-    location: "Azhiyur Chungam",
-    phone: "7736706770",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Neethi Medical Lab",
-    category: "Diagnostic Services",
-    location: "Orkkatteri",
-    phone: "9446267220",
-    icon: CircleCheck,
-  },
-  {
     title: "Education Support",
     image: educationImage,
     description:
@@ -185,7 +199,7 @@ export default function Home() {
   const [activeDeposit, setActiveDeposit] = useState(-1);
   return (
     <main className="overflow-hidden bg-white font-sans text-[#234956]">
-      {/* HERO â€” full-width family background */}
+      {/* HERO — full-width family background */}
 
       <section className="relative isolate overflow-hidden bg-[#00303F]">
         {/* Background family image */}
@@ -228,30 +242,27 @@ export default function Home() {
                 Building a Better Tomorrow
               </p>
             </div>
-       
 
-{/* ISO certification badge */}
-<div className="mt-7 inline-flex items-center gap-3 rounded-xl border border-[#58C6D5]/30 bg-[#00516A]/45 px-4 py-3 shadow-sm backdrop-blur-sm sm:px-5">
-  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#58C6D5]/15">
-    <Award
-      size={29}
-      strokeWidth={2.2}
-      className="text-[#58C6D5]"
-      aria-hidden="true"
-    />
-  </div>
+            {/* ISO certification badge */}
+            <div className="mt-7 inline-flex items-center gap-3 rounded-xl border border-[#58C6D5]/30 bg-[#00516A]/45 px-4 py-3 shadow-sm backdrop-blur-sm sm:px-5">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#58C6D5]/15">
+                <Award
+                  size={29}
+                  strokeWidth={2.2}
+                  className="text-[#58C6D5]"
+                  aria-hidden="true"
+                />
+              </div>
 
-  <div className="leading-tight">
-    <p className="text-sm font-bold tracking-wide text-white sm:text-base">
-      ISO 9001:2015
-    </p>
-    <p className="mt-1 text-xs font-medium text-[#B8EDF3] sm:text-sm">
-      Certified Bank
-    </p>
-  </div>
-</div>
-
-
+              <div className="leading-tight">
+                <p className="text-sm font-bold tracking-wide text-white sm:text-base">
+                  ISO 9001:2015
+                </p>
+                <p className="mt-1 text-xs font-medium text-[#B8EDF3] sm:text-sm">
+                  Certified Bank
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -269,108 +280,6 @@ export default function Home() {
           </h2>
 
           <div className="hidden h-10 w-px shrink-0 bg-gray-200 md:block" />
-          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-2 text-sm leading-6 text-gray-600">
-            <span className="font-semibold text-[#00516A]">Bank Updates:</span>
-            <span>Explore our banking services and announcements.</span>
-            <Link
-              to="/news-events"
-              className="font-semibold text-[#008BA5] hover:underline"
-            >
-              View all â†’
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-          <div className="relative">
-            <div className="absolute -left-4 -top-4 h-28 w-28 rounded-tl-[40px] bg-[#BDECF2]" />
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#00516A] to-[#008BA5]">
-              <img
-                src={whoWeAreImage}
-                alt="Who We Are"
-                className="h-[340px] w-full object-cover md:h-[440px]"
-                loading="lazy"
-              />
-            </div>
-            <div className="absolute -bottom-5 -right-3 hidden rounded-xl bg-white p-5 shadow-xl sm:block">
-              <ShieldCheck size={28} className="mb-2 text-[#008BA5]" />
-              <p className="font-semibold text-[#00516A]">Trust & Service</p>
-              <p className="mt-1 text-sm text-[#52727D]">
-                Our commitment to you
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <SectionHeading
-              eyebrow="Who We Are"
-              title="Banking Built Around Your Community"
-              description="We aim to provide accessible banking services while supporting savings, financial wellbeing and community development."
-            />
-            <p className="mb-5 text-sm leading-8 text-[#52727D] md:text-base">
-              At Shakarana Bank, we believe strong communities begin with
-              financial confidence. Explore our deposit options, banking
-              facilities and services to find what meets your needs.
-            </p>
-            <div className="mb-8 space-y-3">
-              {[
-                "Customer-focused service",
-                "Accessible banking information",
-                "Commitment to community development",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CircleCheck size={19} className="shrink-0 text-[#008BA5]" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-            <SectionLink to="/about">Discover Our Bank</SectionLink>
-          </div>
-        </div>
-      </section>
-
-{/* DEPOSIT SCHEME TILES */}
-<section className="relative z-20 -mt-16 -mb-16 bg-transparent px-5 md:px-8">
-  <div className="mx-auto grid max-w-5xl grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-6">
-    {deposits.map((item, index) => {
-      const Icon = item.icon;
-      const active = activeDeposit === index;
-
-      const colors = [
-        "bg-[#00516A] text-white",
-        "bg-[#D9F4F8] text-[#00465C]",
-        "bg-[#008BA5] text-white",
-        "bg-[#BCECF9] text-[#00465C]",
-        "bg-[#006D85] text-white",
-        "bg-[#E8F8FA] text-[#00465C]",
-      ];
-
-      return (
-        <button
-          type="button"
-          key={item.title}
-          onClick={() => setActiveDeposit(active ? -1 : index)}
-          aria-pressed={active}
-          className={`group flex h-[150px] w-full min-w-0 flex-col items-center justify-center rounded-none border-0 px-2 text-center transition-all duration-300 hover:relative hover:z-30 hover:brightness-95 hover:shadow-lg ${
-            active
-              ? "bg-[#003746] text-white"
-              : colors[index % colors.length]
-          }`}
-        >
-          <Icon
-            size={24}
-            className="mb-2 shrink-0 transition-transform duration-300 group-hover:scale-110"
-          />
-
-          <span className="text-xs font-bold leading-snug sm:text-sm">
-            {item.title}
-          </span>
-        </button>
-      );
-    })}
 
           {/* Continuous horizontal ticker */}
           <div className="group flex min-w-0 flex-1 items-center gap-3 overflow-hidden">
@@ -387,10 +296,10 @@ export default function Home() {
                     aria-hidden={copy === 2}
                   >
                     {[
-                      { period: "15â€“45 Days", rate: "6.25%" },
-                      { period: "46â€“90 Days", rate: "6.75%" },
-                      { period: "90â€“180 Days", rate: "7.25%" },
-                      { period: "181â€“364 Days", rate: "7.75%" },
+                      { period: "15–45 Days", rate: "6.25%" },
+                      { period: "46–90 Days", rate: "6.75%" },
+                      { period: "90–180 Days", rate: "7.25%" },
+                      { period: "181–364 Days", rate: "7.75%" },
                       { period: "Above 1 Year", rate: "8.00%" },
                       { period: "Senior Citizen", rate: "0.5% extra" },
                     ].map((item) => (
@@ -402,7 +311,7 @@ export default function Home() {
                         <strong className="whitespace-nowrap text-[#008BA5]">
                           {item.rate}
                         </strong>
-                        <span className="ml-3 text-gray-300">â€¢</span>
+                        <span className="ml-3 text-gray-300">•</span>
                       </div>
                     ))}
                   </div>
@@ -416,7 +325,7 @@ export default function Home() {
             to="/news-events"
             className="shrink-0 text-sm font-semibold text-[#008BA5] transition hover:text-[#00516A] hover:underline"
           >
-            View all â†’
+            View all →
           </Link>
         </div>
 
@@ -444,45 +353,39 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-   
-<section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-  <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-    {/* Left image */}
-    <div className="relative">
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#00516A] to-[#008BA5]">
-        <img
-          src={whoWeAreImage}
-          alt="Who We Are"
-          className="h-[340px] w-full object-cover md:h-[440px]"
-          loading="lazy"
-        />
-      </div>
-    </div>
 
-    {/* Right content */}
-    <div>
-     
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+          {/* Left image */}
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#00516A] to-[#008BA5]">
+              <img
+                src={whoWeAreImage}
+                alt="Who We Are"
+                className="h-[340px] w-full object-cover md:h-[440px]"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
-      <SectionHeading
-        eyebrow="Who We Are"
-        title="Banking Built Around Your Community"
-        description="We aim to provide accessible banking services while supporting savings, financial wellbeing and community development."
-      />
+          {/* Right content */}
+          <div>
+            <SectionHeading
+              eyebrow="Who We Are"
+              title="Banking Built Around Your Community"
+              description="We aim to provide accessible banking services while supporting savings, financial wellbeing and community development."
+            />
 
-      <p className="mb-5 text-sm leading-8 text-[#52727D] md:text-base">
-        At Shakarana Bank, we believe strong communities begin with
-        financial confidence. Explore our deposit options, banking
-        facilities and services to find what meets your needs.
-      </p>
+            <p className="mb-5 text-sm leading-8 text-[#52727D] md:text-base">
+              At Shakarana Bank, we believe strong communities begin with
+              financial confidence. Explore our deposit options, banking
+              facilities and services to find what meets your needs.
+            </p>
 
-   
-      <SectionLink to="/about">Read More</SectionLink>
-    
-
-    </div>
-  </div>
-</section>
-
+            <SectionLink to="/about">Read More</SectionLink>
+          </div>
+        </div>
+      </section>
 
       {/* DEPOSIT SCHEME TILES */}
       <section className="relative z-20 -mt-16 -mb-16 bg-transparent px-5 md:px-8">
@@ -609,7 +512,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INTEREST RATES â€” */}
+      {/* INTEREST RATES — */}
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="Interest Rates" title="Fixed Deposit" />
@@ -667,100 +570,98 @@ export default function Home() {
       </section>
 
       {/* SOCIAL INITIATIVES */}
-    
-<section className="relative isolate overflow-hidden bg-[#F4FAFC] py-20 md:py-28">
-  {/* Decorative background */}
-  <div className="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-[#58C6D5]/15 blur-3xl" />
-  <div className="pointer-events-none absolute -bottom-32 -left-32 -z-10 h-96 w-96 rounded-full bg-[#008BA5]/10 blur-3xl" />
-  <div
-    className="pointer-events-none absolute inset-0 -z-10 opacity-[0.4]"
-    style={{
-      backgroundImage:
-        "radial-gradient(#BFE3EA 1px, transparent 1px)",
-      backgroundSize: "24px 24px",
-      maskImage:
-        "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
-      WebkitMaskImage:
-        "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
-    }}
-  />
 
-  <div className="mx-auto max-w-7xl px-5 md:px-8">
-    <SectionHeading
-      eyebrow="Beyond Banking"
-      title="Associated Institutions"
-      description="Beyond banking, we support our community through associated consumer, medical and laboratory services."
-    />
+      <section className="relative isolate overflow-hidden bg-[#F4FAFC] py-20 md:py-28">
+        {/* Decorative background */}
+        <div className="pointer-events-none absolute -right-32 -top-32 -z-10 h-96 w-96 rounded-full bg-[#58C6D5]/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -left-32 -z-10 h-96 w-96 rounded-full bg-[#008BA5]/10 blur-3xl" />
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.4]"
+          style={{
+            backgroundImage: "radial-gradient(#BFE3EA 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+            maskImage:
+              "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)",
+          }}
+        />
 
-    <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-      {initiatives.map((item, index) => {
-        const Icon = item.icon;
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <SectionHeading
+            eyebrow="Beyond Banking"
+            title="Associated Institutions"
+            description="Beyond banking, we support our community through associated consumer, medical and laboratory services."
+          />
 
-        return (
-          <article
-            key={`${item.title}-${item.location}`}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-[#58C6D5] hover:shadow-xl hover:shadow-[#008BA5]/10"
-          >
-            {/* Top accent bar */}
-            <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-[#00516A] via-[#008BA5] to-[#58C6D5] transition-transform duration-500 group-hover:scale-x-100" />
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {institutions.map((item, index) => {
+              const Icon = item.icon;
 
-            {/* Large faded index number */}
-            <span className="pointer-events-none absolute right-5 top-3 text-6xl font-extrabold leading-none text-[#E7F7FA] transition group-hover:text-[#D2F0F5]">
-              0{index + 1}
-            </span>
+              return (
+                <article
+                  key={`${item.title}-${item.location}`}
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-[#58C6D5] hover:shadow-xl hover:shadow-[#008BA5]/10"
+                >
+                  {/* Top accent bar */}
+                  <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-[#00516A] via-[#008BA5] to-[#58C6D5] transition-transform duration-500 group-hover:scale-x-100" />
 
-            {/* Icon */}
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#E7F7FA] to-[#D2F0F5] text-[#008BA5] transition duration-300 group-hover:from-[#008BA5] group-hover:to-[#00516A] group-hover:text-white">
-              <Icon size={27} strokeWidth={1.8} />
-            </div>
+                  {/* Large faded index number */}
+                  <span className="pointer-events-none absolute right-5 top-3 text-6xl font-extrabold leading-none text-[#E7F7FA] transition group-hover:text-[#D2F0F5]">
+                    0{index + 1}
+                  </span>
 
-            {/* Category tag */}
-            <span className="mt-5 inline-block self-start rounded-full bg-[#E7F7FA] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#008BA5]">
-              {item.category}
-            </span>
+                  {/* Icon */}
+                  <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#E7F7FA] to-[#D2F0F5] text-[#008BA5] transition duration-300 group-hover:from-[#008BA5] group-hover:to-[#00516A] group-hover:text-white">
+                    <Icon size={27} strokeWidth={1.8} />
+                  </div>
 
-            <h3 className="mt-3 min-h-[3.5rem] text-xl font-bold leading-snug text-[#00516A]">
-              {item.title}
-            </h3>
+                  {/* Category tag */}
+                  <span className="mt-5 inline-block self-start rounded-full bg-[#E7F7FA] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#008BA5]">
+                    {item.category}
+                  </span>
 
-            {/* Location */}
-            <div className="mt-4 flex items-center gap-2.5 border-t border-[#E5F0F2] pt-4 text-sm">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F4FAFC] text-[#008BA5]">
-                <MapPin size={16} />
-              </span>
-              <span className="font-semibold text-[#234956]">
-                {item.location}
-              </span>
-            </div>
+                  <h3 className="mt-3 min-h-[3.5rem] text-xl font-bold leading-snug text-[#00516A]">
+                    {item.title}
+                  </h3>
 
-            {/* Call button */}
-            <a
-              href={`tel:${(item.phone || "").replace(/\s/g, "")}`}
-              className="mt-5 inline-flex items-center justify-between gap-3 rounded-xl bg-[#F4FAFC] px-4 py-3 text-sm font-semibold text-[#00516A] ring-1 ring-[#D5E9ED] transition hover:bg-[#008BA5] hover:text-white hover:ring-[#008BA5]"
-              aria-label={`Call ${item.title}, ${item.location}`}
-            >
-              <span className="flex items-center gap-2">
-                <Phone size={16} />
-                {item.phone || "Phone number unavailable"}
-              </span>
-              <ArrowUpRight
-                size={16}
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </a>
-          </article>
-        );
-      })}
-    </div>
+                  {/* Location */}
+                  <div className="mt-4 flex items-center gap-2.5 border-t border-[#E5F0F2] pt-4 text-sm">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F4FAFC] text-[#008BA5]">
+                      <MapPin size={16} />
+                    </span>
+                    <span className="font-semibold text-[#234956]">
+                      {item.location}
+                    </span>
+                  </div>
 
-    <div className="mt-12 flex justify-center md:justify-start">
-      <SectionLink to="/gallery">Explore Our Activities</SectionLink>
-    </div>
-  </div>
-</section>
+                  {/* Call button */}
+                  <a
+                    href={`tel:${item.phone.replace(/\s/g, "")}`}
+                    className="mt-5 inline-flex items-center justify-between gap-3 rounded-xl bg-[#F4FAFC] px-4 py-3 text-sm font-semibold text-[#00516A] ring-1 ring-[#D5E9ED] transition hover:bg-[#008BA5] hover:text-white hover:ring-[#008BA5]"
+                    aria-label={`Call ${item.title}, ${item.location}`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <Phone size={16} />
+                      {item.phone}
+                    </span>
+                    <ArrowUpRight
+                      size={16}
+                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </a>
+                </article>
+              );
+            })}
+          </div>
 
+          <div className="mt-12 flex justify-center md:justify-start">
+            <SectionLink to="/gallery">Explore Our Activities</SectionLink>
+          </div>
+        </div>
+      </section>
 
-      {/* AWARDS â€” matching the supplied reference layout and image proportions */}
+      {/* AWARDS — matching the supplied reference layout and image proportions */}
       {/* <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="Awards" title="Our Achievements" centered />
@@ -847,4 +748,3 @@ export default function Home() {
     </main>
   );
 }
-
