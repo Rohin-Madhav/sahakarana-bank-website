@@ -100,17 +100,6 @@ const deposits = [
 
 const facilities = [
   {
-    title: "Mobile Banking",
-    icon: Smartphone,
-    description:
-      "Access available banking services conveniently from your mobile.",
-  },
-  {
-    title: "ATM & CDM",
-    icon: CreditCard,
-    description: "Explore available cash withdrawal and deposit facilities.",
-  },
-  {
     title: "Customer Kiosk",
     icon: Building2,
     description: "Convenient self-service options, subject to availability.",
@@ -119,11 +108,6 @@ const facilities = [
     title: "Locker Facility",
     icon: LockKeyhole,
     description: "Enquire about available locker facilities.",
-  },
-  {
-    title: "NEFT / RTGS",
-    icon: ArrowLeftRight,
-    description: "Learn about available electronic fund transfer services.",
   },
   {
     title: "Customer Support",
