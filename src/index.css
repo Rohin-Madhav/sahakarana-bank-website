@@ -1,26 +1,23 @@
+
 @import "tailwindcss";
 
-html {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Valeria Medium";
+  src: url("./assets/fonts/ValeriamediumRegular-X3WqP.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-body {
-  font-family: inherit;
+@theme {
+  --font-sans: "Valeria Medium", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
+html,
+body,
+#root {
+  font-family: "Valeria Medium", sans-serif;
+  font-synthesis: none;
 }
 
 p,

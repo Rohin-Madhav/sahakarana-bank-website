@@ -210,7 +210,7 @@ export default function Home() {
           <div className="max-w-2xl text-white">
             {/* Headline */}
 
-            <h1 className="mt-5 text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+           <h1 className="mt-5 text-3xl font-medium leading-[1.15] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
               Your Trusted Partner
               <span className="block bg-gradient-to-r from-[#58C6D5] to-[#9BE7F0] bg-clip-text text-transparent">
                 in Every Step of Life
