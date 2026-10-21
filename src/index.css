@@ -1,44 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 @import "tailwindcss";
 
-/* Premium, consistent typography across the entire website */
-:root {
-  font-family: 'DM Sans', sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Valeria Medium";
+  src: url("./assets/fonts/ValeriamediumRegular-X3WqP.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Valeria Medium", sans-serif;
 }
 
 html,
 body,
 #root {
-  min-height: 100%;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "Valeria Medium", sans-serif;
+  font-synthesis: none;
 }
 
-body {
-  margin: 0;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-p, li {
+p,
+li {
   line-height: 1.7;
 }

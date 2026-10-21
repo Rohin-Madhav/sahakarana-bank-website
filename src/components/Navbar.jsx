@@ -105,7 +105,7 @@ export default function Navbar() {
             <p className="text-base font-bold tracking-wide text-[#00516A]">
               Vatakara Block
             </p>
-            <p className="text-xs text-[#52727D]">Employees Co-op Societyk</p>
+            <p className="text-xs text-[#52727D]">Employees Co-op Society</p>
           </div>
         </Link>
 
