@@ -288,7 +288,7 @@ export default function Facilities() {
                   </div>
 
                   <div>
-                    <h3 className="text-base font-bold">Head Office</h3>
+                    <h3 className="text-base font-bold">HEAD OFFICE</h3>
                     <p className="mt-1 text-sm leading-6 text-white/80">
                       Vatakara Block Employees Co-operative Society Ltd. No.
                       D2394, Orkkatteri P.O., Kozhikode District, Kerala -
