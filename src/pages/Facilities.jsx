@@ -94,22 +94,22 @@ const communityServices = [
 
 const branches = [
   {
-    name: "Main Branch",
+    name: "MAIN BRANCH",
     location: "Orkkatteri",
     phone: "0496 2547120",
   },
   {
-    name: "Vellikulangara Branch",
+    name: "VELLIKULANGARA BRANCH",
     location: "Vellikulangara",
     phone: "0496 2511717",
   },
   {
-    name: "Azhiyoor Branch",
+    name: "AZHIYOOR BRANCH",
     location: "Azhiyoor",
     phone: "9539674120",
   },
   {
-    name: "Balavadi Branch",
+    name: "BALAVADI BRANCH",
     location: "Balavadi",
     phone: "0496 2511160",
   },
