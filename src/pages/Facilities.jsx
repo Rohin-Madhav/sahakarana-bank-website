@@ -94,22 +94,22 @@ const communityServices = [
 
 const branches = [
   {
-    name: "Main Branch",
+    name: "MAIN BRANCH",
     location: "Orkkatteri",
     phone: "0496 2547120",
   },
   {
-    name: "Vellikulangara Branch",
+    name: "VELLIKULANGARA BRANCH",
     location: "Vellikulangara",
     phone: "0496 2511717",
   },
   {
-    name: "Azhiyoor Branch",
+    name: "AZHIYOOR BRANCH",
     location: "Azhiyoor",
     phone: "9539674120",
   },
   {
-    name: "Balavadi Branch",
+    name: "BALAVADI BRANCH",
     location: "Balavadi",
     phone: "0496 2511160",
   },
@@ -288,7 +288,7 @@ export default function Facilities() {
                   </div>
 
                   <div>
-                    <h3 className="text-base font-bold">Head Office</h3>
+                    <h3 className="text-base font-bold">HEAD OFFICE</h3>
                     <p className="mt-1 text-sm leading-6 text-white/80">
                       Vatakara Block Employees Co-operative Society Ltd. No.
                       D2394, Orkkatteri P.O., Kozhikode District, Kerala -

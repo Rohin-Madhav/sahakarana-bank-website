@@ -210,7 +210,7 @@ export default function Home() {
           <div className="max-w-2xl text-white">
             {/* Headline */}
 
-           <h1 className="mt-5 text-3xl font-medium leading-[1.15] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+            <h1 className="mt-5 text-3xl font-medium leading-[1.15] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
               Your Trusted Partner
               <span className="block bg-gradient-to-r from-[#58C6D5] to-[#9BE7F0] bg-clip-text text-transparent">
                 in Every Step of Life
@@ -585,52 +585,46 @@ export default function Home() {
               return (
                 <article
                   key={`${item.title}-${item.location}`}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:border-[#58C6D5] hover:shadow-xl hover:shadow-[#008BA5]/10"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#58C6D5] hover:shadow-lg hover:shadow-[#008BA5]/10"
                 >
-                  {/* Top accent bar */}
-                  <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-[#00516A] via-[#008BA5] to-[#58C6D5] transition-transform duration-500 group-hover:scale-x-100" />
-
-                  {/* Large faded index number */}
-                  <span className="pointer-events-none absolute right-5 top-3 text-6xl font-extrabold leading-none text-[#E7F7FA] transition group-hover:text-[#D2F0F5]">
-                    0{index + 1}
-                  </span>
-
-                  {/* Icon */}
-                  <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#E7F7FA] to-[#D2F0F5] text-[#008BA5] transition duration-300 group-hover:from-[#008BA5] group-hover:to-[#00516A] group-hover:text-white">
-                    <Icon size={27} strokeWidth={1.8} />
-                  </div>
-
-                  {/* Category tag */}
-                  <span className="mt-5 inline-block self-start rounded-full bg-[#E7F7FA] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#008BA5]">
-                    {item.category}
-                  </span>
-
-                  <h3 className="mt-3 min-h-[3.5rem] text-xl font-bold leading-snug text-[#00516A]">
-                    {item.title}
-                  </h3>
-
-                  {/* Location */}
-                  <div className="mt-4 flex items-center gap-2.5 border-t border-[#E5F0F2] pt-4 text-sm">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F4FAFC] text-[#008BA5]">
-                      <MapPin size={16} />
+                  {/* Top label */}
+                  <div className="flex items-center justify-between border-b border-[#E5F0F2] pb-4">
+                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#008BA5]">
+                      {item.category}
                     </span>
-                    <span className="font-semibold text-[#234956]">
-                      {item.location}
+
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#E7F7FA] text-[#008BA5]">
+                      <Icon size={19} strokeWidth={1.8} />
                     </span>
                   </div>
 
-                  {/* Call button */}
+                  {/* Institution details */}
+                  <div className="flex flex-1 flex-col items-center py-6 text-center">
+                    <h3 className="text-xl font-semibold leading-snug text-[#00516A]">
+                      {item.title}
+                    </h3>
+
+                    {/* Simple logo / emblem */}
+                    <div className="my-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#D5E9ED] bg-[#F4FAFC] text-[#008BA5] transition group-hover:border-[#58C6D5]">
+                      <Icon size={30} strokeWidth={1.6} />
+                    </div>
+
+                    <div className="flex items-center gap-2 text-sm text-[#52727D]">
+                      <MapPin size={16} className="shrink-0 text-[#008BA5]" />
+                      <span className="font-medium">{item.location}</span>
+                    </div>
+                  </div>
+
+                  {/* Phone number */}
                   <a
                     href={`tel:${item.phone.replace(/\s/g, "")}`}
-                    className="mt-5 inline-flex items-center justify-between gap-3 rounded-xl bg-[#F4FAFC] px-4 py-3 text-sm font-semibold text-[#00516A] ring-1 ring-[#D5E9ED] transition hover:bg-[#008BA5] hover:text-white hover:ring-[#008BA5]"
                     aria-label={`Call ${item.title}, ${item.location}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E7F7FA] px-4 py-3 text-sm font-semibold text-[#00516A] transition hover:bg-[#008BA5] hover:text-white"
                   >
-                    <span className="flex items-center gap-2">
-                      <Phone size={16} />
-                      {item.phone}
-                    </span>
+                    <Phone size={16} />
+                    {item.phone}
                     <ArrowUpRight
-                      size={16}
+                      size={15}
                       className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
                   </a>
