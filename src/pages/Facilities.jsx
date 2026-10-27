@@ -16,21 +16,13 @@ import {
   Banknote,
   LockKeyhole,
   Monitor,
+  Icon,
+  MapPin,
+  Phone,
+  ArrowUpRight,
 } from "lucide-react";
 
 const mainFacilities = [
-  {
-    icon: Smartphone,
-    title: "Mobile Banking",
-    description:
-      "Access banking services conveniently and manage your financial needs with greater flexibility.",
-  },
-  {
-    icon: CreditCard,
-    title: "24×7 ATM & CDM",
-    description:
-      "Enjoy convenient access to cash withdrawal and cash deposit services through ATM and CDM facilities.",
-  },
   {
     icon: Monitor,
     title: "Customer Kiosk",
@@ -48,12 +40,6 @@ const mainFacilities = [
     title: "RTGS & NEFT",
     description:
       "Transfer funds conveniently through electronic banking channels for eligible transactions.",
-  },
-  {
-    icon: Building2,
-    title: "Auditorium & Conference Hall",
-    description:
-      "Facilities for meetings, conferences and community programmes that bring people together.",
   },
 ];
 
@@ -192,26 +178,32 @@ export default function Facilities() {
               const Icon = facility.icon;
 
               return (
-                <article
+                <div
                   key={facility.title}
-                  className="group rounded-xl border border-[#DDECEF] bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-[#9CCDD7] hover:shadow-lg sm:p-6"
+                  className="group relative flex overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#58C6D5] hover:shadow-lg hover:shadow-[#00516A]/10"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#E7F7FA] text-[#007D96] transition group-hover:bg-[#00516A] group-hover:text-white">
-                    <Icon size={22} strokeWidth={1.7} />
+                  {/* Left teal gradient strip */}
+                  <div className="w-2 shrink-0 bg-gradient-to-b from-[#003F53] via-[#008BA5] to-[#58C6D5] transition-all duration-300 group-hover:w-3" />
+
+                  {/* Card content */}
+                  <div className="flex flex-1 items-start gap-5 p-5 sm:p-6">
+                    {/* Icon */}
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E7F7FA] text-[#008BA5] transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#00516A] group-hover:to-[#008BA5] group-hover:text-white">
+                      <Icon size={24} strokeWidth={1.8} />
+                    </div>
+
+                    {/* Text */}
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-lg font-semibold leading-snug text-[#00516A] transition-colors group-hover:text-[#008BA5]">
+                        {facility.title}
+                      </h3>
+
+                      <p className="mt-2 text-sm leading-6 text-[#52727D]">
+                        {facility.description}
+                      </p>
+                    </div>
                   </div>
-
-                  <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#008BA5]">
-                    Facility {String(index + 1).padStart(2, "0")}
-                  </p>
-
-                  <h3 className="mt-1.5 text-base font-bold leading-snug text-[#063B4A] sm:text-lg">
-                    {facility.title}
-                  </h3>
-
-                  <p className="mt-2 text-[13px] leading-6 text-[#627A83] sm:text-sm">
-                    {facility.description}
-                  </p>
-                </article>
+                </div>
               );
             })}
           </div>
@@ -235,31 +227,57 @@ export default function Facilities() {
               return (
                 <article
                   key={`${service.title}-${service.location}`}
-                  className="flex flex-col rounded-xl border border-[#DDECEF] bg-white p-5 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00516A]/10"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#E7F7FA] text-[#007D96]">
-                    <Icon size={21} strokeWidth={1.7} />
+                  {/* Teal gradient header */}
+                  <div className="relative overflow-hidden bg-gradient-to-r from-[#003F53] via-[#00516A] to-[#008BA5] px-6 py-5">
+                    <div className="pointer-events-none absolute -right-6 -top-10 h-28 w-28 rounded-full border-[16px] border-white/[0.07]" />
+
+                    <div className="relative flex items-center justify-between gap-3">
+                      <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#B9F4F8]">
+                        {service.category}
+                      </span>
+
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white ring-1 ring-white/20">
+                        <Icon size={21} strokeWidth={1.8} />
+                      </div>
+                    </div>
+
+                    <h3 className="relative mt-5 min-h-[3.5rem] text-xl font-semibold leading-snug text-white">
+                      {service.title}
+                    </h3>
                   </div>
 
-                  <h3 className="mt-4 text-base font-bold leading-snug text-[#063B4A]">
-                    {service.title}
-                  </h3>
+                  {/* Card content */}
+                  <div className="flex flex-1 flex-col px-6 py-5">
+                    <div className="flex flex-1 flex-col items-center text-center">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#D5E9ED] bg-[#F4FAFC] text-[#008BA5] transition duration-300 group-hover:border-[#58C6D5] group-hover:bg-[#E7F7FA]">
+                        <Icon size={29} strokeWidth={1.6} />
+                      </div>
 
-                  <p className="mt-1 text-xs font-semibold text-[#008BA5]">
-                    {service.location}
-                  </p>
+                      <div className="mt-5 flex items-center justify-center gap-2 text-sm text-[#52727D]">
+                        <MapPin size={16} className="shrink-0 text-[#008BA5]" />
+                        <span className="font-medium">{service.location}</span>
+                      </div>
+                    </div>
 
-                  <p className="mt-3 flex-1 text-[13px] leading-6 text-[#627A83]">
-                    {service.description}
-                  </p>
+                    {/* Gradient call button */}
+                    <a
+                      href={`tel:${service.phone.replace(/\s/g, "")}`}
+                      aria-label={`Call ${service.title}, ${service.location}`}
+                      className="mt-6 inline-flex items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-[#00516A] to-[#008BA5] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:from-[#003F53] hover:to-[#00516A] hover:shadow-md"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Phone size={16} />
+                        {service.phone}
+                      </span>
 
-                  <a
-                    href={`tel:${service.phone.replace(/\s/g, "")}`}
-                    className="mt-4 inline-flex items-center gap-2 border-t border-[#E7F0F2] pt-3 text-xs font-semibold text-[#00516A] transition hover:text-[#008BA5]"
-                  >
-                    <Smartphone size={14} />
-                    {service.phone}
-                  </a>
+                      <ArrowUpRight
+                        size={17}
+                        className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </a>
+                  </div>
                 </article>
               );
             })}
@@ -309,26 +327,26 @@ export default function Facilities() {
               {branches.map((branch) => (
                 <article
                   key={branch.name}
-                  className="rounded-xl border border-[#DDECEF] bg-white p-5 transition hover:border-[#9CCDD7] hover:shadow-md sm:p-6"
+                  className="rounded-xl border border-[#00516A] bg-[#00516A] p-5 text-white transition hover:border-[#008BA5] hover:shadow-md sm:p-6"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h3 className="text-base font-bold leading-snug text-[#063B4A]">
+                      <h3 className="text-base font-bold leading-snug text-white">
                         {branch.name}
                       </h3>
-                      <p className="mt-1 text-xs text-[#627A83]">
+                      <p className="mt-1 text-xs text-white/80">
                         {branch.location}
                       </p>
                     </div>
 
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#E7F7FA] text-[#007D96]">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10">
                       <Building2 size={18} />
                     </div>
                   </div>
 
                   <a
                     href={`tel:${branch.phone.replace(/\s/g, "")}`}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#00516A] hover:text-[#008BA5]"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#BCEAF1] hover:text-white"
                   >
                     <Smartphone size={15} />
                     {branch.phone}
