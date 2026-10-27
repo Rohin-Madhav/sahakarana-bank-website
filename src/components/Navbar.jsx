@@ -19,10 +19,8 @@ const navItems = [
   {
     label: "News & Media",
     children: [
-      { label: "News & Events", to: "/news-events" },
       { label: "Gallery", to: "/gallery" },
       { label: "Press Highlights", to: "/press-highlights" },
-      { label: "Awards & Achievements", to: "/awards" },
     ],
   },
   { label: "Contact Us", to: "/contact" },
@@ -98,14 +96,16 @@ export default function Navbar() {
           <img
             src={bankLogo}
             alt="Shakarana Bank logo"
-            className="h-18 w-auto max-w-40 object-contain"
+            className="h-20 w-auto max-w-40 object-contain"
           />
 
-          <div className="hidden sm:block">
-            <p className="text-base font-bold tracking-wide text-[#00516A]">
-              Vatakara Block
+          <div className="hidden whitespace-nowrap font-serif sm:block">
+            <p className="text-base font-bold leading-tight tracking-wide text-[#00516A]">
+              VATAKARA BLOCK
             </p>
-            <p className="text-xs text-[#52727D]">Employees Co-op Society</p>
+            <p className="text-xs leading-tight text-[#52727D]">
+              EMPLOYEES CO-OP SOCIETY
+            </p>
           </div>
         </Link>
 

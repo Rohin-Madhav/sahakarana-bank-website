@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 import familyImage from "../assets/Family-Savings.webp";
 import interestRatesImage from "../assets/interest-rates-reference.png";
-import awardsTrophyImage from "../assets/awards-trophy-reference.png";
 import educationImage from "../assets/social-initiative-1.webp";
 import healthcareImage from "../assets/social-initiative-2.webp";
 import environmentImage from "../assets/social-initiative-3.webp";
@@ -25,6 +24,7 @@ import {
   MapPin,
   Phone,
   Mail,
+  Icon,
   CalendarDays,
   Building2,
   CircleCheck,
@@ -36,28 +36,28 @@ import {
 
 const institutions = [
   {
-    title: "Neethi Consumer Store",
+    title: "NEETHI CONSUMER STORE",
     category: "Consumer",
     location: "Orkkatteri",
     phone: "0496 2544323",
     icon: ShoppingBasket,
   },
   {
-    title: "Neethi Medical Store",
+    title: "NEETHI MEDICAL STORE",
     category: "Medical",
     location: "Azhiyur Chungam",
     phone: "7736706770",
     icon: BriefcaseMedical,
   },
   {
-    title: "Neethi Medical Lab",
+    title: "NEETHI MEDICAL LAB",
     category: "Laboratory",
     location: "Orkkatteri",
     phone: "9446267220",
     icon: FlaskConical,
   },
   {
-    title: "Neethi Medical Lab",
+    title: "NEETHI MEDICAL LAB",
     category: "Laboratory",
     location: "Kannookkara",
     phone: "9497304002",
@@ -227,24 +227,48 @@ export default function Home() {
               </p>
             </div>
 
-            {/* ISO certification badge */}
-            <div className="mt-7 inline-flex items-center gap-3 rounded-xl border border-[#58C6D5]/30 bg-[#00516A]/45 px-4 py-3 shadow-sm backdrop-blur-sm sm:px-5">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#58C6D5]/15">
-                <Award
-                  size={29}
-                  strokeWidth={2.2}
-                  className="text-[#58C6D5]"
-                  aria-hidden="true"
-                />
+            {/* Certification badges */}
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              {/* ISO certification badge */}
+              <div className="inline-flex items-center gap-3 rounded-xl border border-[#58C6D5]/30 bg-[#00516A]/45 px-4 py-3 shadow-sm backdrop-blur-sm sm:px-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#58C6D5]/15">
+                  <Award
+                    size={29}
+                    strokeWidth={2.2}
+                    className="text-[#58C6D5]"
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <div className="leading-tight">
+                  <p className="text-sm font-bold tracking-wide text-white sm:text-base">
+                    ISO 9001:2015
+                  </p>
+                  <p className="mt-1 text-xs font-medium text-[#B8EDF3] sm:text-sm">
+                    Certified Bank
+                  </p>
+                </div>
               </div>
 
-              <div className="leading-tight">
-                <p className="text-sm font-bold tracking-wide text-white sm:text-base">
-                  ISO 9001:2015
-                </p>
-                <p className="mt-1 text-xs font-medium text-[#B8EDF3] sm:text-sm">
-                  Certified Bank
-                </p>
+              {/* Class 1 Special Grade badge */}
+              <div className="inline-flex items-center gap-3 rounded-xl border border-[#58C6D5]/30 bg-[#00516A]/45 px-4 py-3 shadow-sm backdrop-blur-sm sm:px-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#58C6D5]/15">
+                  <Award
+                    size={29}
+                    strokeWidth={2.2}
+                    className="text-[#58C6D5]"
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <div className="leading-tight">
+                  <p className="text-sm font-bold tracking-wide text-white sm:text-base">
+                    Class 1
+                  </p>
+                  <p className="mt-1 text-xs font-medium text-[#B8EDF3] sm:text-sm">
+                    Special Grade
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -476,17 +500,29 @@ export default function Home() {
             return (
               <div
                 key={item.title}
-                className="group rounded-2xl border border-[#E0EDF0] bg-white p-7 transition hover:border-[#58C6D5] hover:shadow-lg"
+                className="group relative flex overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#58C6D5] hover:shadow-lg hover:shadow-[#00516A]/10"
               >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E7F7FA] text-[#008BA5] transition group-hover:bg-[#008BA5] group-hover:text-white">
-                  <Icon size={27} />
+                {/* Left teal gradient strip */}
+                <div className="w-2 shrink-0 bg-gradient-to-b from-[#003F53] via-[#008BA5] to-[#58C6D5] transition-all duration-300 group-hover:w-3" />
+
+                {/* Card content */}
+                <div className="flex flex-1 items-start gap-5 p-5 sm:p-6">
+                  {/* Icon */}
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E7F7FA] text-[#008BA5] transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#00516A] group-hover:to-[#008BA5] group-hover:text-white">
+                    <Icon size={24} strokeWidth={1.8} />
+                  </div>
+
+                  {/* Text */}
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-lg font-semibold leading-snug text-[#00516A] transition-colors group-hover:text-[#008BA5]">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-6 text-[#52727D]">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-[#00516A]">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-[#52727D]">
-                  {item.description}
-                </p>
               </div>
             );
           })}
@@ -585,49 +621,57 @@ export default function Home() {
               return (
                 <article
                   key={`${item.title}-${item.location}`}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#58C6D5] hover:shadow-lg hover:shadow-[#008BA5]/10"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00516A]/10"
                 >
-                  {/* Top label */}
-                  <div className="flex items-center justify-between border-b border-[#E5F0F2] pb-4">
-                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#008BA5]">
-                      {item.category}
-                    </span>
+                  {/* Teal gradient header */}
+                  <div className="relative overflow-hidden bg-gradient-to-r from-[#003F53] via-[#00516A] to-[#008BA5] px-6 py-5">
+                    <div className="pointer-events-none absolute -right-6 -top-10 h-28 w-28 rounded-full border-[16px] border-white/[0.07]" />
 
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#E7F7FA] text-[#008BA5]">
-                      <Icon size={19} strokeWidth={1.8} />
-                    </span>
-                  </div>
+                    <div className="relative flex items-center justify-between gap-3">
+                      <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#B9F4F8]">
+                        {item.category}
+                      </span>
 
-                  {/* Institution details */}
-                  <div className="flex flex-1 flex-col items-center py-6 text-center">
-                    <h3 className="text-xl font-semibold leading-snug text-[#00516A]">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white ring-1 ring-white/20">
+                        <Icon size={21} strokeWidth={1.8} />
+                      </div>
+                    </div>
+
+                    <h3 className="relative mt-5 min-h-[3.5rem] text-xl font-semibold leading-snug text-white">
                       {item.title}
                     </h3>
-
-                    {/* Simple logo / emblem */}
-                    <div className="my-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#D5E9ED] bg-[#F4FAFC] text-[#008BA5] transition group-hover:border-[#58C6D5]">
-                      <Icon size={30} strokeWidth={1.6} />
-                    </div>
-
-                    <div className="flex items-center gap-2 text-sm text-[#52727D]">
-                      <MapPin size={16} className="shrink-0 text-[#008BA5]" />
-                      <span className="font-medium">{item.location}</span>
-                    </div>
                   </div>
 
-                  {/* Phone number */}
-                  <a
-                    href={`tel:${item.phone.replace(/\s/g, "")}`}
-                    aria-label={`Call ${item.title}, ${item.location}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#E7F7FA] px-4 py-3 text-sm font-semibold text-[#00516A] transition hover:bg-[#008BA5] hover:text-white"
-                  >
-                    <Phone size={16} />
-                    {item.phone}
-                    <ArrowUpRight
-                      size={15}
-                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    />
-                  </a>
+                  {/* Card content */}
+                  <div className="flex flex-1 flex-col px-6 py-5">
+                    <div className="flex flex-1 flex-col items-center text-center">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#D5E9ED] bg-[#F4FAFC] text-[#008BA5] transition duration-300 group-hover:border-[#58C6D5] group-hover:bg-[#E7F7FA]">
+                        <Icon size={29} strokeWidth={1.6} />
+                      </div>
+
+                      <div className="mt-5 flex items-center justify-center gap-2 text-sm text-[#52727D]">
+                        <MapPin size={16} className="shrink-0 text-[#008BA5]" />
+                        <span className="font-medium">{item.location}</span>
+                      </div>
+                    </div>
+
+                    {/* Gradient call button */}
+                    <a
+                      href={`tel:${item.phone.replace(/\s/g, "")}`}
+                      aria-label={`Call ${item.title}, ${item.location}`}
+                      className="mt-6 inline-flex items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-[#00516A] to-[#008BA5] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:from-[#003F53] hover:to-[#00516A] hover:shadow-md"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Phone size={16} />
+                        {item.phone}
+                      </span>
+
+                      <ArrowUpRight
+                        size={17}
+                        className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </a>
+                  </div>
                 </article>
               );
             })}
