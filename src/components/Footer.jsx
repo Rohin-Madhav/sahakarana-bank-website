@@ -1,7 +1,6 @@
 import React from "react";
-import {Landmark, MapPin, Phone, Mail, ArrowUpRight} from "lucide-react";
+import { Landmark, MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
 
 const Footer = () => {
   return (
@@ -85,7 +84,6 @@ const Footer = () => {
             <p>
               © {new Date().getFullYear()} Shakarana Bank. All rights reserved.
             </p>
-            <p>Website Design & Development</p>
           </div>
         </div>
       </footer>

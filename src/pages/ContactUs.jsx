@@ -207,21 +207,6 @@ const ContactUs = () => {
                   </a>
                 </div>
               </div>
-
-              {/* Office hours */}
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#E7F7FA] text-[#008BA5]">
-                  <Clock size={21} />
-                </div>
-
-                <div>
-                  <h3 className="font-bold text-[#00516A]">Office Hours</h3>
-
-                  <p className="mt-1 text-sm leading-6 text-[#52727D]">
-                    Please contact our office for current working hours.
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* Help information */}
