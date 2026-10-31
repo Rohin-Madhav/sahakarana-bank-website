@@ -116,34 +116,26 @@ const facilities = [
   },
 ];
 
-const initiatives = [
+const branches = [
   {
-    title: "Education Support",
-    image: educationImage,
-    description:
-      "Supporting learning opportunities and a brighter future for children in our community.",
-    icon: Users,
+    name: "MAIN BRANCH",
+    location: "Orkkatteri",
+    phone: "0496 2547120",
   },
   {
-    title: "Healthcare Access",
-    image: healthcareImage,
-    description:
-      "Encouraging healthier communities through awareness and essential care.",
-    icon: ShieldCheck,
+    name: "VELLIKULANGARA BRANCH",
+    location: "Vellikulangara",
+    phone: "0496 2511717",
   },
   {
-    title: "Environmental Care",
-    image: environmentImage,
-    description:
-      "Promoting a greener tomorrow through tree planting and environmental awareness.",
-    icon: HandCoins,
+    name: "AZHIYOOR BRANCH",
+    location: "Azhiyoor",
+    phone: "9539674120",
   },
   {
-    title: "Community Development",
-    image: communityImage,
-    description:
-      "Creating opportunities and supporting local community development.",
-    icon: Landmark,
+    name: "BALAVADI BRANCH",
+    location: "Balavadi",
+    phone: "0496 2511160",
   },
 ];
 
@@ -160,6 +152,26 @@ function SectionHeading({ eyebrow, title, description, centered = false }) {
         <p
           className={`mt-4 max-w-2xl text-sm leading-7 text-[#52727D] md:text-base ${centered ? "mx-auto" : ""}`}
         >
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function SectionIntro({ eyebrow, title, description, centered = false }) {
+  return (
+    <div className={centered ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+      <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#008BA5] sm:text-xs">
+        {eyebrow}
+      </p>
+
+      <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#063B4A] sm:text-3xl lg:text-[2.15rem]">
+        {title}
+      </h2>
+
+      {description && (
+        <p className="mt-3 text-sm leading-6 text-[#627A83] sm:text-[15px] sm:leading-7">
           {description}
         </p>
       )}
@@ -442,9 +454,6 @@ export default function Home() {
         <div className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-[#BDECF2]/30 blur-3xl" />
         <div className="mx-auto mt-8 grid max-w-6xl items-center gap-10 px-5 md:mt-12 md:grid-cols-2 md:gap-14 md:px-8">
           <div className="relative z-10">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.12em] text-[#008BA5]">
-              Additional Feature
-            </p>
             <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#00516A] md:text-4xl">
               Quality Policy
             </h2>
@@ -607,80 +616,78 @@ export default function Home() {
           }}
         />
 
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <SectionHeading
-            eyebrow="Beyond Banking"
-            title="Associated Institutions"
-            description="Beyond banking, we support our community through associated consumer, medical and laboratory services."
-          />
+        {/* BRANCHES */}
+        <section
+          id="branches"
+          className="scroll-mt-20 px-5 py-14 sm:px-8 sm:py-16 lg:py-20"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-14">
+              <div>
+                <SectionIntro
+                  eyebrow="Visit Us"
+                  title="Our Branch Network"
+                  description="Connect with our team at the branch most convenient for you. We are here to help with your banking needs."
+                />
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {institutions.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <article
-                  key={`${item.title}-${item.location}`}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00516A]/10"
-                >
-                  {/* Teal gradient header */}
-                  <div className="relative overflow-hidden bg-gradient-to-r from-[#003F53] via-[#00516A] to-[#008BA5] px-6 py-5">
-                    <div className="pointer-events-none absolute -right-6 -top-10 h-28 w-28 rounded-full border-[16px] border-white/[0.07]" />
-
-                    <div className="relative flex items-center justify-between gap-3">
-                      <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#B9F4F8]">
-                        {item.category}
-                      </span>
-
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white ring-1 ring-white/20">
-                        <Icon size={21} strokeWidth={1.8} />
-                      </div>
+                <div className="mt-6 rounded-xl bg-[#00516A] p-5 text-white sm:p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                      <Landmark size={21} />
                     </div>
 
-                    <h3 className="relative mt-5 min-h-[3.5rem] text-xl font-semibold leading-snug text-white">
-                      {item.title}
-                    </h3>
+                    <div>
+                      <h3 className="text-base font-bold">HEAD OFFICE</h3>
+                      <p className="mt-1 text-sm leading-6 text-white/80">
+                        Vatakara Block Employees Co-operative Society Ltd. No.
+                        D2394, Orkkatteri P.O., Kozhikode District, Kerala -
+                        673501.
+                      </p>
+                      <a
+                        href="tel:04962546120"
+                        className="mt-3 inline-block text-sm font-semibold text-[#BCEAF1] hover:text-white"
+                      >
+                        0496 2546120
+                      </a>
+                    </div>
                   </div>
+                </div>
+              </div>
 
-                  {/* Card content */}
-                  <div className="flex flex-1 flex-col px-6 py-5">
-                    <div className="flex flex-1 flex-col items-center text-center">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#D5E9ED] bg-[#F4FAFC] text-[#008BA5] transition duration-300 group-hover:border-[#58C6D5] group-hover:bg-[#E7F7FA]">
-                        <Icon size={29} strokeWidth={1.6} />
+              <div className="grid gap-3 sm:grid-cols-2">
+                {branches.map((branch) => (
+                  <article
+                    key={branch.name}
+                    className="rounded-xl border border-[#00516A] bg-[#00516A] p-5 text-white transition hover:border-[#008BA5] hover:shadow-md sm:p-6"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-base font-bold leading-snug text-white">
+                          {branch.name}
+                        </h3>
+                        <p className="mt-1 text-xs text-white/80">
+                          {branch.location}
+                        </p>
                       </div>
 
-                      <div className="mt-5 flex items-center justify-center gap-2 text-sm text-[#52727D]">
-                        <MapPin size={16} className="shrink-0 text-[#008BA5]" />
-                        <span className="font-medium">{item.location}</span>
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                        <Building2 size={18} />
                       </div>
                     </div>
 
-                    {/* Gradient call button */}
                     <a
-                      href={`tel:${item.phone.replace(/\s/g, "")}`}
-                      aria-label={`Call ${item.title}, ${item.location}`}
-                      className="mt-6 inline-flex items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-[#00516A] to-[#008BA5] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:from-[#003F53] hover:to-[#00516A] hover:shadow-md"
+                      href={`tel:${branch.phone.replace(/\s/g, "")}`}
+                      className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#BCEAF1] hover:text-white"
                     >
-                      <span className="flex items-center gap-2">
-                        <Phone size={16} />
-                        {item.phone}
-                      </span>
-
-                      <ArrowUpRight
-                        size={17}
-                        className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      />
+                      <Smartphone size={15} />
+                      {branch.phone}
                     </a>
-                  </div>
-                </article>
-              );
-            })}
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
-
-          <div className="mt-12 flex justify-center md:justify-start">
-            <SectionLink to="/gallery">Explore Our Activities</SectionLink>
-          </div>
-        </div>
+        </section>
       </section>
 
       {/* AWARDS — matching the supplied reference layout and image proportions */}
