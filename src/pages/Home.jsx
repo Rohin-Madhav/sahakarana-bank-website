@@ -329,12 +329,12 @@ export default function Home() {
           </div>
 
           {/* News link */}
-          <Link
-            to="/news-events"
+          <a
+            href="#interest-rates"
             className="shrink-0 text-sm font-semibold text-[#008BA5] transition hover:text-[#00516A] hover:underline"
           >
             View all →
-          </Link>
+          </a>
         </div>
 
         <style>{`
@@ -449,10 +449,11 @@ export default function Home() {
               Quality Policy
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#234956] md:text-base">
-              We the kadirur service co-operative bank is committed to provides
-              all commercial banking service beyond the expectations of the
-              customers in a novel way to make number one co-operative bank in
-              kerala through continual improvement and support from the society.
+              We the Vatakara block employees co operative society is committed
+              to provides all commercial banking service beyond the expectations
+              of the customers in a novel way to make number one co-operative
+              bank in kerala through continual improvement and support from the
+              society.
             </p>
             <h3 className="mt-6 text-base font-bold text-[#00516A]">
               Quality Objectives
@@ -463,7 +464,6 @@ export default function Home() {
                 "To improvement our customer base by 20% over the previous year",
                 "To attend and solve customer complaints within 24 working hours",
                 "Enhance the total business volume of the bank by 20% during the year",
-                "Reduce NPA below 3% during this year",
               ].map((objective) => (
                 <li key={objective} className="flex items-start gap-3">
                   <CircleCheck
@@ -533,7 +533,7 @@ export default function Home() {
       </section>
 
       {/* INTEREST RATES — */}
-      <section className="bg-white py-16 md:py-20">
+      <section id="interest-rates" className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="Interest Rates" title="Fixed Deposit" />
           <div className="mt-8 grid items-center gap-6 lg:grid-cols-[1fr_1.25fr_1fr]">
