@@ -10,10 +10,10 @@ const navItems = [
     children: [
       { label: "Who We Are", to: "/about" },
       { label: "Board of Directors", to: "/board-of-directors" },
-      { label: "Quality Policy", to: "/quality-policy" },
+      { label: "Foot Prints", to: "/foot-prints" },
     ],
   },
-  { label: "Facilities", to: "/facilities" },
+  { label: "Branches", to: "/branches " },
   { label: "Deposits", to: "/deposits" },
   { label: "Loans", to: "/loans" },
   {
@@ -56,7 +56,7 @@ export default function Navbar() {
               className="flex items-center gap-2 hover:text-[#8DE7F0]"
             >
               <Phone size={15} />
-              <span>Phone: +91 XXXXX XXXXX</span>
+              <span>Phone: +91 8547247120</span>
             </a>
 
             <a
@@ -64,7 +64,7 @@ export default function Navbar() {
               className="flex items-center gap-2 hover:text-[#8DE7F0]"
             >
               <Mail size={15} />
-              <span>Email: info@example.com</span>
+              <span>Email: vbecsltd@gmail.com</span>
             </a>
           </div>
 
@@ -96,14 +96,14 @@ export default function Navbar() {
           <img
             src={bankLogo}
             alt="Shakarana Bank logo"
-            className="h-20 w-auto max-w-40 object-contain"
+            className="h-25 w-auto max-w-40 object-contain"
           />
 
           <div className="hidden whitespace-nowrap font-serif sm:block">
             <p className="text-base font-bold leading-tight tracking-wide text-[#00516A]">
               VATAKARA BLOCK
             </p>
-            <p className="text-xs leading-tight text-[#52727D]">
+            <p className="text-base font-bold leading-tight tracking-wide text-[#00516A]">
               EMPLOYEES CO-OP SOCIETY
             </p>
           </div>

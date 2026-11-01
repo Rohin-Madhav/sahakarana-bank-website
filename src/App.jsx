@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import BoardOfDirectors from "./pages/BoardOfDirectors";
 import Facilities from "./pages/Facilities";
-import QualityPolicy from "./pages/QualityPolicy";
+import FootPrints from "./pages/FootPrints";
 import ContactUs from "./pages/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -19,8 +19,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="board-of-directors" element={<BoardOfDirectors />} />
-          <Route path="facilities" element={<Facilities />} />
-          <Route path="quality-policy" element={<QualityPolicy />} />
+          <Route path="branches" element={<Facilities />} />
+          <Route path="foot-prints" element={<FootPrints />} />
           <Route path="contact" element={<ContactUs />} />
         </Route>
       </Routes>

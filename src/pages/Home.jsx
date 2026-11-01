@@ -32,6 +32,7 @@ import {
   BriefcaseMedical,
   FlaskConical,
   Microscope,
+  MonitorSmartphone,
 } from "lucide-react";
 
 const institutions = [
@@ -101,8 +102,14 @@ const deposits = [
 const facilities = [
   {
     title: "Customer Kiosk",
-    icon: Building2,
+    icon: MonitorSmartphone,
     description: "Convenient self-service options, subject to availability.",
+  },
+  {
+    title: "Auditorium & Conference Hall",
+    icon: Building2,
+    description:
+      "Well-equipped spaces for meetings, events, and presentations.",
   },
   {
     title: "Locker Facility",
@@ -119,22 +126,22 @@ const facilities = [
 const branches = [
   {
     name: "MAIN BRANCH",
-    location: "Orkkatteri",
+    location: "ORKKATTERI",
     phone: "0496 2547120",
   },
   {
     name: "VELLIKULANGARA BRANCH",
-    location: "Vellikulangara",
+    location: "",
     phone: "0496 2511717",
   },
   {
     name: "AZHIYOOR BRANCH",
-    location: "Azhiyoor",
+    location: "",
     phone: "9539674120",
   },
   {
     name: "BALAVADI BRANCH",
-    location: "Balavadi",
+    location: "",
     phone: "0496 2511160",
   },
 ];
@@ -230,7 +237,7 @@ export default function Home() {
             </h1>
 
             {/* Tagline */}
-            <div className="mt-6 border-l-4 border-[#58C6D5] pl-4">
+            <div className="mt-6 ">
               <p className="text-lg font-semibold sm:text-xl md:text-2xl">
                 Banking for Today
               </p>
@@ -393,15 +400,11 @@ export default function Home() {
             <SectionHeading
               eyebrow="Who We Are"
               title="Banking Built Around Your Community"
-              description="We aim to provide accessible banking services while supporting savings, financial wellbeing and community development."
+              description="The Vatakara Block Employees' Co-operative Society, established at Orkkatteri under the leadership of the late freedom fighter K. Kunhirama Kurup, was registered on April 23, 1986.
+Launched under the name 'Vadakara Block Employees & Pensioners Credit Co-operative Society,' the institution commenced operations on May 18 of the same year.
+Currently, the society employs 58 individuals, including staff members, collection agents, appraisers, and employees of allied institutions. It has a membership base of 37,463 across categories A, C, and D.
+The society holds a share capital of ₹ 2,34,78,690 and deposits amounting to ₹108.16 crore"
             />
-
-            <p className="mb-5 text-sm leading-8 text-[#52727D] md:text-base">
-              At Shakarana Bank, we believe strong communities begin with
-              financial confidence. Explore our deposit options, banking
-              facilities and services to find what meets your needs.
-            </p>
-
             <SectionLink to="/about">Read More</SectionLink>
           </div>
         </div>
@@ -449,61 +452,154 @@ export default function Home() {
         </div>
       </section>
 
-      {/* QUALITY POLICY */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#F4FAFC] via-white to-[#E7F7FA] py-16 md:py-20">
-        <div className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-[#BDECF2]/30 blur-3xl" />
-        <div className="mx-auto mt-8 grid max-w-6xl items-center gap-10 px-5 md:mt-12 md:grid-cols-2 md:gap-14 md:px-8">
-          <div className="relative z-10">
-            <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#00516A] md:text-4xl">
-              Quality Policy
-            </h2>
-            <p className="mt-5 text-sm leading-7 text-[#234956] md:text-base">
-              We the Vatakara block employees co operative society is committed
-              to provides all commercial banking service beyond the expectations
-              of the customers in a novel way to make number one co-operative
-              bank in kerala through continual improvement and support from the
-              society.
-            </p>
-            <h3 className="mt-6 text-base font-bold text-[#00516A]">
-              Quality Objectives
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-[#234956] md:text-base">
-              {[
-                "Frequently survey customers for feedback, aiming for a minimum 90% satisfaction rate.",
-                "To improvement our customer base by 20% over the previous year",
-                "To attend and solve customer complaints within 24 working hours",
-                "Enhance the total business volume of the bank by 20% during the year",
-              ].map((objective) => (
-                <li key={objective} className="flex items-start gap-3">
-                  <CircleCheck
-                    size={20}
-                    className="mt-0.5 shrink-0 text-[#008BA5]"
-                  />
-                  <span>{objective}</span>
-                </li>
-              ))}
-            </ul>
+      {/* MISSION & VISION */}
+
+      <section className="relative mt-7 overflow-hidden bg-[#F4FAFC] py-16 md:py-24">
+        <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#58C6D5]/10 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl px-5 md:px-8">
+          <div className="grid items-stretch gap-7 lg:grid-cols-2 lg:gap-10">
+            {/* LEFT - VISION & MISSION */}
+            <div className="flex flex-col gap-6">
+              {/* VISION CARD */}
+              <article className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-[#003F53] via-[#00516A] to-[#007D91] p-7 text-white shadow-lg shadow-[#003F53]/10 sm:p-9">
+                {/* Decorative circle */}
+                <div className="pointer-events-none absolute -right-16 -top-20 -z-10 h-64 w-64 rounded-full border-[35px] border-white/[0.06]" />
+
+                <div className="relative">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#8DE7F0]">
+                    Our Vision
+                  </p>
+
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/85 sm:text-base">
+                    To be the most trusted and comprehensive co-operative
+                    partner for our members, fostering lifelong financial
+                    security, accessible healthcare, and affordable daily living
+                    under the proud values of the Kerala Co-operative sector.
+                  </p>
+                </div>
+              </article>
+
+              {/* MISSION CARD */}
+              <article className="relative overflow-hidden rounded-3xl border border-[#D5E9ED] bg-white p-7 shadow-sm sm:p-9">
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#008BA5]">
+                  Our Mission
+                </p>
+
+                <div className="mt-6 space-y-5">
+                  {/* Financial Empowerment */}
+                  <div>
+                    <h4 className="font-semibold text-[#00516A]">
+                      Financial Empowerment
+                    </h4>
+
+                    <p className="mt-1 text-sm leading-6 text-[#52727D]">
+                      Secure, high-yield deposit schemes and fair, accessible
+                      loan products tailored to our members' growth.
+                    </p>
+                  </div>
+
+                  {/* Healthcare Excellence */}
+                  <div>
+                    <h4 className="font-semibold text-[#00516A]">
+                      Healthcare Excellence
+                    </h4>
+
+                    <p className="mt-1 text-sm leading-6 text-[#52727D]">
+                      Reliable, affordable, high-quality diagnostic and
+                      pharmaceutical services through our co-operative medical
+                      labs and stores.
+                    </p>
+                  </div>
+
+                  {/* Daily Essentials */}
+                  <div>
+                    <h4 className=" font-semibold text-[#00516A]">
+                      Daily Essentials
+                    </h4>
+
+                    <p className="mt-1 text-sm leading-6 text-[#52727D]">
+                      Quality household groceries at reasonable prices through
+                      our retail outlets, supporting community welfare.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            {/* RIGHT - IMAGE */}
+            <div className="group relative h-[350px] overflow-hidden rounded-3xl bg-[#003F53] shadow-lg sm:h-[450px] lg:h-full lg:min-h-[650px]">
+              <img
+                src={qualityPolicyImage}
+                alt="Vatakara Block Employees Co-op Society"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
           </div>
-          <div className="group relative overflow-hidden rounded-2xl border border-[#D5E9ED] bg-[#E7F7FA] shadow-lg">
-            <img
-              src={qualityPolicyImage}
-              alt="Quality assurance and trusted banking service"
-              loading="lazy"
-              className="h-[300px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none md:h-[420px]"
-            />
+        </div>
+      </section>
+
+      {/* CORE VALUES */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <div className="mb-10 max-w-2xl">
+            <h2 className="mt-3 text-3xl font-semibold text-[#003F53] md:text-4xl">
+              Our Core Values
+            </h2>
+          </div>
+
+          {/* Values List */}
+          <div className="grid gap-x-12 gap-y-7 md:grid-cols-2">
+            {[
+              {
+                title: "Mutual Help",
+                description: "Believing in the power of growing together.",
+              },
+              {
+                title: "Transparency",
+                description:
+                  "Maintaining absolute integrity in financial and medical operations.",
+              },
+              {
+                title: "Affordability",
+                description:
+                  "Keeping health services and daily retail accessible to everyone.",
+              },
+              {
+                title: "Member First",
+                description:
+                  "Aligning every new venture with the welfare of our members.",
+              },
+            ].map((value, index) => (
+              <div
+                key={value.title}
+                className="flex items-start gap-4 border-b border-[#D5E9ED] pb-6"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7F7FA] text-sm font-semibold text-[#00516A]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-[#00516A]">
+                    {value.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-7 text-[#52727D] md:text-base">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FACILITIES */}
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
-        <SectionHeading
-          eyebrow="What We Offer"
-          title="Banking Facilities"
-          description="Explore the facilities and services available to customers. Contact the bank to confirm availability and access requirements."
-        />
+        <SectionHeading title="Banking Facilities" />
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {facilities.map((item) => {
             const Icon = item.icon;
             return (
@@ -535,9 +631,6 @@ export default function Home() {
               </div>
             );
           })}
-        </div>
-        <div className="mt-8">
-          <SectionLink to="/facilities">Explore All Facilities</SectionLink>
         </div>
       </section>
 
@@ -588,10 +681,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <p className="mt-6 text-xs leading-6 text-[#52727D]">
-            Note: Rates shown are copied from the supplied reference screenshot
-            and must be confirmed with the bank before publishing.
-          </p>
           <div className="mt-5">
             <SectionLink to="/deposits">Enquire About Rates</SectionLink>
           </div>
@@ -624,11 +713,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-14">
               <div>
-                <SectionIntro
-                  eyebrow="Visit Us"
-                  title="Our Branch Network"
-                  description="Connect with our team at the branch most convenient for you. We are here to help with your banking needs."
-                />
+                <SectionIntro title="Our Branch Network" />
 
                 <div className="mt-6 rounded-xl bg-[#00516A] p-5 text-white sm:p-6">
                   <div className="flex items-start gap-3">
@@ -639,16 +724,17 @@ export default function Home() {
                     <div>
                       <h3 className="text-base font-bold">HEAD OFFICE</h3>
                       <p className="mt-1 text-sm leading-6 text-white/80">
-                        Vatakara Block Employees Co-operative Society Ltd. No.
-                        D2394, Orkkatteri P.O., Kozhikode District, Kerala -
-                        673501.
+                        Vatakara Block Employees Co Operative Society Ltd
+                        <br></br>
+                        No D2394 Orkkatteri Po, Kozhikode Dist, Pin 673501{" "}
+                        <br></br>Main Branch & Head Office Orkkatteri.
                       </p>
-                      <a
-                        href="tel:04962546120"
-                        className="mt-3 inline-block text-sm font-semibold text-[#BCEAF1] hover:text-white"
-                      >
-                        0496 2546120
-                      </a>
+                      <p className="mt-3 inline-block text-sm font-semibold text-[#BCEAF1] hover:text-white">
+                        Email: vbecsltd@gmail.com
+                      </p>
+                      <p className="mt-3 inline-block text-sm font-semibold text-[#BCEAF1] hover:text-white">
+                        Ph: 0496 2546120, 8547247120
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -671,7 +757,7 @@ export default function Home() {
                       </div>
 
                       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10">
-                        <Building2 size={18} />
+                        <MapPin size={18} />
                       </div>
                     </div>
 
@@ -689,67 +775,6 @@ export default function Home() {
           </div>
         </section>
       </section>
-
-      {/* AWARDS — matching the supplied reference layout and image proportions */}
-      {/* <section className="bg-white py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <SectionHeading eyebrow="Awards" title="Our Achievements" centered />
-
-          <div className="mt-10 grid items-center gap-6 lg:grid-cols-[1fr_0.8fr_1fr]">
-            <div className="space-y-4">
-              {[
-                "Best Performance Award 2023-2024",
-                "Best Co-operative Bank Award 2024",
-                "Best Credit initiative Award 2024",
-                "Best Human Resource Management innovation Award 2024",
-                "First position for Best Performance in the State Government Primary Agriculture Credit.",
-                "Sahakarana rathnam Award 2024",
-                "Rashtrreeya Nirmal Puraskar for Bank President",
-              ].map((title) => (
-                <div
-                  key={title}
-                  className="flex items-start gap-2.5 text-sm font-medium leading-snug text-[#52727D] md:text-base"
-                >
-                  <Award size={21} className="mt-0.5 shrink-0 text-[#008BA5]" />
-                  <span>{title}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex items-center justify-center">
-              <img
-                src={awardsTrophyImage}
-                alt="Golden trophy for the bank's achievements"
-                className="w-full max-w-[320px] object-contain transition-transform duration-500 ease-out hover:scale-105 hover:-translate-y-1 motion-reduce:transition-none"
-              />
-            </div>
-
-            <div className="space-y-4">
-              {[
-                "Frontiers of Cooperative Banking Awards (FCBA) 2023",
-                "First Prize for Deposit Collection 2023",
-                "NCDC Best Performance Award",
-                "Kerala Bank Excellency Award",
-                "Best Co-operative Bank IT Head Award 2022",
-                "Best Co-operative Bank Award 2021",
-                "FCBA Best Performance Award 2024-25",
-              ].map((title) => (
-                <div
-                  key={title}
-                  className="flex items-start gap-2.5 text-sm font-medium leading-snug text-[#52727D] md:text-base"
-                >
-                  <Award size={21} className="mt-0.5 shrink-0 text-[#008BA5]" />
-                  <span>{title}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <SectionLink to="/awards">View All Awards</SectionLink>
-          </div>
-        </div>
-      </section> */}
 
       {/* CONTACT CTA */}
       <section className="px-5 py-20 md:px-8">
