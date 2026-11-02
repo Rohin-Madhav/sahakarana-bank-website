@@ -37,6 +37,33 @@ const contactDetails = [
   },
 ];
 
+const branches = [
+  {
+    name: "MAIN BRANCH",
+    location: "ORKKATTERI",
+    phone: "0496 2547120",
+    mapUrl: "https://maps.app.goo.gl/bGyFepQzAqc3gzyV8",
+  },
+  {
+    name: "VELLIKULANGARA BRANCH",
+    location: "",
+    phone: "0496 2511717",
+    mapUrl: "https://maps.app.goo.gl/QHD3FpJViubK6gMj8",
+  },
+  {
+    name: "AZHIYOOR BRANCH",
+    location: "",
+    phone: "9539674120",
+    mapUrl: "https://maps.app.goo.gl/VTRkk6zkaXBHPqcZ7",
+  },
+  {
+    name: "BALAVADI BRANCH",
+    location: "",
+    phone: "0496 2511160",
+    mapUrl: "https://maps.app.goo.gl/wVzmkZpPpwWq4RsYA",
+  },
+];
+
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -59,21 +86,32 @@ const ContactUs = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Replace with your backend/API or official society email.
-    const recipient = "";
+    const whatsappNumber = "918547247120";
 
-    const subject = encodeURIComponent(formData.subject);
+    const message = `*New Enquiry - Vatakara Block Employees Co-op Society*
 
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
-    );
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Email:* ${formData.email || "Not provided"}
+*Enquiry Type:* ${formData.subject}
 
-    if (!recipient) {
-      setSubmitted(true);
-      return;
-    }
+*Message:*
+${formData.message}`;
 
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message,
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    // Clear form fields
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      subject: "General Enquiry",
+      message: "",
+    });
   };
 
   const inputClass =
@@ -88,62 +126,9 @@ const ContactUs = () => {
         <div className="pointer-events-none absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-[#008BA5]/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-5 md:px-8">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#58C6D5]">
-            Vatakara Block Employees Co-op Society
-          </p>
-
           <h1 className="max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
             We're Here to <span className="text-[#58C6D5]">Help You</span>
           </h1>
-
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-            Have a question or need assistance? Get in touch with our team. We
-            are happy to help with your enquiries and banking-related
-            information.
-          </p>
-        </div>
-      </section>
-
-      {/* Contact information cards */}
-      <section className="relative z-10 mx-auto -mt-8 max-w-7xl px-5 md:px-8">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {contactDetails.map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <article
-                key={item.title}
-                className="rounded-xl border border-[#D5E9ED] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E7F7FA] text-[#008BA5]">
-                  <Icon size={23} />
-                </div>
-
-                <h2 className="mt-5 text-lg font-bold text-[#00516A]">
-                  {item.title}
-                </h2>
-
-                {item.href && item.title === "Visit Our Main Branch" ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block font-semibold text-[#00516A] transition hover:text-[#008BA5] hover:underline"
-                  >
-                    {item.value} ↗
-                  </a>
-                ) : (
-                  <p className="mt-2 font-semibold text-[#234956]">
-                    {item.value}
-                  </p>
-                )}
-
-                <p className="mt-2 text-sm leading-7 text-[#52727D]">
-                  {item.description}
-                </p>
-              </article>
-            );
-          })}
         </div>
       </section>
 
@@ -151,77 +136,53 @@ const ContactUs = () => {
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           {/* Left column */}
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#008BA5]">
-              Contact Information
-            </p>
 
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-[#003F53] md:text-4xl">
-              Let's Start a Conversation
-            </h2>
+          {/* Branches */}
+          <div className="min-w-0">
+            <div className="mb-6">
+              <h3 className="mt-2 font-valeria text-3xl text-[#003F53]">
+                Our Branches
+              </h3>
 
-            <p className="mt-5 text-sm leading-8 text-[#52727D] md:text-base">
-              Whether you need more information about our services or have a
-              general enquiry, send us a message or contact our office.
-            </p>
-
-            <div className="mt-8 space-y-5">
-              {/* Society */}
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#E7F7FA] text-[#008BA5]">
-                  <Building2 size={21} />
-                </div>
-
-                <div>
-                  <h3 className="font-bold text-[#00516A]">Our Society</h3>
-
-                  <p className="mt-1 text-sm leading-6 text-[#52727D]">
-                    Vatakara Block Employees Co-op Society
-                  </p>
-                </div>
-              </div>
-
-              {/* Main branch address */}
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#E7F7FA] text-[#008BA5]">
-                  <MapPin size={21} />
-                </div>
-
-                <div>
-                  <h3 className="font-bold text-[#00516A]">
-                    Main Branch Address
-                  </h3>
-
-                  <p className="mt-1 text-sm leading-6 text-[#52727D]">
-                    Vatakara, Kerala
-                  </p>
-
-                  <a
-                    href={MAIN_BRANCH_MAP}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-[#008BA5] transition hover:text-[#00516A]"
-                  >
-                    View Location on Maps
-                    <MapPin size={14} />
-                  </a>
-                </div>
-              </div>
+              <p className="mt-3 text-[#52727D]">
+                Connect with us at any of our branches.
+              </p>
             </div>
 
-            {/* Help information */}
-            <div className="mt-8 rounded-xl border border-[#D5E9ED] bg-white p-5">
-              <div className="flex items-center gap-3">
-                <MessageCircle className="text-[#008BA5]" size={22} />
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {branches.map((branch) => (
+                <div
+                  key={branch.name}
+                  className="min-w-0 rounded-2xl border border-[#D4E8ED] bg-white p-5 transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <h4 className="break-words font-valeria text-lg leading-snug text-[#003F53]">
+                    {branch.name}
+                  </h4>
 
-                <h3 className="font-bold text-[#00516A]">How can we help?</h3>
-              </div>
+                  {branch.location && (
+                    <p className="mt-2 text-sm text-[#52727D]">
+                      {branch.location}
+                    </p>
+                  )}
 
-              <p className="mt-2 text-sm leading-7 text-[#52727D]">
-                Fill in the form with your details and enquiry. Our team can
-                follow up once the form is connected to an email or backend
-                service.
-              </p>
+                  <a
+                    href={`tel:${branch.phone.replace(/\s/g, "")}`}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#008BA5] hover:underline"
+                  >
+                    <Phone size={16} className="shrink-0" />
+                    {branch.phone}
+                  </a>
+                  <a
+                    href={branch.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[#008BA5] hover:underline"
+                  >
+                    <MapPin size={16} className="shrink-0" />
+                    View Location
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
 

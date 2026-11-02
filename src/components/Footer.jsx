@@ -13,9 +13,13 @@ const Footer = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
                 <Landmark size={27} className="text-[#8DE7F0]" />
               </div>
-              <div>
-                <h2 className="font-semibold">VATAKARA BLOCK</h2>
-                <h2 className="font-semibold"> EMPLOYEES CO-OP SOCIETY</h2>
+              <div className="min-w-0 font-serif">
+                <p className="text-sm font-bold leading-tight tracking-wide text-white sm:text-base">
+                  VATAKARA BLOCK
+                </p>
+                <p className="text-sm font-bold leading-tight tracking-wide text-white sm:text-base">
+                  EMPLOYEES CO-OP SOCIETY
+                </p>
               </div>
             </div>
             <p className="max-w-sm text-sm leading-7 text-white/70">

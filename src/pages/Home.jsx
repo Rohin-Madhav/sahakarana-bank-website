@@ -128,21 +128,25 @@ const branches = [
     name: "MAIN BRANCH",
     location: "ORKKATTERI",
     phone: "0496 2547120",
+    mapUrl: "https://maps.app.goo.gl/bGyFepQzAqc3gzyV8",
   },
   {
     name: "VELLIKULANGARA BRANCH",
     location: "",
     phone: "0496 2511717",
+    mapUrl: "https://maps.app.goo.gl/QHD3FpJViubK6gMj8",
   },
   {
     name: "AZHIYOOR BRANCH",
     location: "",
     phone: "9539674120",
+    mapUrl: "https://maps.app.goo.gl/VTRkk6zkaXBHPqcZ7",
   },
   {
     name: "BALAVADI BRANCH",
     location: "",
     phone: "0496 2511160",
+    mapUrl: "https://maps.app.goo.gl/wVzmkZpPpwWq4RsYA",
   },
 ];
 
@@ -751,22 +755,26 @@ The society holds a share capital of â‚¹ 2,34,78,690 and deposits amounting to â
                         <h3 className="text-base font-bold leading-snug text-white">
                           {branch.name}
                         </h3>
-                        <p className="mt-1 text-xs text-white/80">
+                        <h3 className="text-base font-bold leading-snug text-white">
                           {branch.location}
-                        </p>
-                      </div>
-
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10">
-                        <MapPin size={18} />
+                        </h3>
                       </div>
                     </div>
-
                     <a
                       href={`tel:${branch.phone.replace(/\s/g, "")}`}
-                      className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#BCEAF1] hover:text-white"
+                      className="mt-5 block w-fit items-center gap-2 text-sm font-semibold text-[#BCEAF1] hover:text-white"
                     >
-                      <Smartphone size={15} />
+                      Ph:
                       {branch.phone}
+                    </a>
+                    <a
+                      href={branch.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 flex w-fit items-center gap-2 text-sm font-medium text-[#BCEAF1] hover:text-white hover:underline"
+                    >
+                      <MapPin size={16} className="shrink-0" />
+                      View Location
                     </a>
                   </article>
                 ))}

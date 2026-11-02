@@ -1,115 +1,123 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft, CheckCircle2, ShieldCheck, Target } from "lucide-react";
-import qualityPolicyImage from "../assets/quality-policy.png";
+import React from "react";
+import {
+  CalendarDays,
+  Users,
+  Landmark,
+  Award,
+  Building2,
+  HeartHandshake,
+} from "lucide-react";
 
-const objectives = [
-  "Frequently survey customers for feedback, aiming for a minimum 90% satisfaction rate.",
-  "Improve the customer base by 20% over the previous year.",
-  "Attend to and resolve customer complaints within 24 working hours.",
-  "Enhance the total business volume of the bank by 20% during the year.",
-  "Reduce NPA below 3% during the year.",
+const milestones = [
+  {
+    year: "1986",
+    title: "The Beginning of Our Journey",
+    icon: CalendarDays,
+    content:
+      "The Vadakara Block Employees' Co-operative Society was established at Orkkatteri under the leadership of the late freedom fighter K. Kunhirama Kurup and registered on 23 April 1986. The institution began operations on 18 May 1986 under the name Vadakara Block Employees & Pensioners Credit Co-operative Society.",
+  },
+  {
+    year: "Growing Together",
+    title: "A Strong Member Community",
+    icon: Users,
+    content:
+      "Founded through the joint initiative of pensioners and employees, the society has grown into a pioneering co-operative institution in the state. Today, it serves 37,463 members across categories A, C and D, with 58 employees, collection agents, appraisers and allied-institution staff.",
+  },
+  {
+    year: "Financial Strength",
+    title: "Building Financial Trust",
+    icon: Landmark,
+    content:
+      "The society holds a share capital of ₹2,34,78,690 and deposits amounting to ₹108.16 crore. Classified as a Class I Special Grade society, it has an outstanding loan portfolio of ₹84.21 crore and a total business volume of ₹192.37 crore.",
+  },
+  {
+    year: "Recognition",
+    title: "A Commitment to Excellence",
+    icon: Award,
+    content:
+      "Through its distinctive banking practices and commitment to public trust, the society has been honored with the Cooperative Department's award for the best institution of its kind in the district. It also consistently plays a leading role in deposit mobilization campaigns.",
+  },
+  {
+    year: "Community Services",
+    title: "Beyond Banking",
+    icon: HeartHandshake,
+    content:
+      "With a strong sense of social commitment, the society operates branches in Eramala, Azhiyur, Onchiyam and Chorode Panchayats. It also runs a Neethi Consumer Store and Medical Lab in Orkkatteri, a Neethi Medical Store in Azhiyur, and a Neethi Medical Lab in Kannookkara.",
+  },
+  {
+    year: "Community Initiatives",
+    title: "Serving Everyday Needs",
+    icon: Building2,
+    content:
+      "The society organizes seasonal initiatives such as school-season book fairs, Vishu firecracker markets and vegetable markets associated with the Neethi store. A building complex is also under construction on society-owned land in the heart of Orkkatteri town, marking another step in its continued growth.",
+  },
 ];
-export default function FootPrints() {
+
+const FootPrints = () => {
   return (
-    <main className="bg-white text-[#234956]">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#003F53] via-[#00516A] to-[#008BA5] px-5 py-16 text-white md:px-8 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[.2em] text-[#8DE7F0]">
-            About Us
-          </p>
-          <h1 className="max-w-3xl text-4xl font-extrabold leading-tight md:text-6xl">
-            Quality Policy
+    <main className="bg-[#F4FAFC] text-[#234956]">
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#003F53] via-[#00516A] to-[#008BA5] px-5 py-14 text-white md:px-8 md:py-20">
+        <div className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full border-[50px] border-white/5" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <h1 className="mt-3 max-w-1xl text-3xl font-extrabold leading-tight md:text-5xl">
+            Our Footprints Through the Years
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-            Our stated commitment to customer-focused service and continual
-            improvement.
-          </p>
         </div>
       </section>
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
-        <div>
-          <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E7F7FA] text-[#008BA5]">
-            <ShieldCheck size={30} />
-          </div>
-          <p className="mb-3 text-sm font-bold uppercase tracking-[.16em] text-[#008BA5]">
-            Our Commitment
+
+      {/* TIMELINE */}
+      <section className="mx-auto max-w-5xl px-5 py-14 md:px-8 md:py-20">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#008BA5]">
+            Our History & Milestones
           </p>
-          <h2 className="text-3xl font-extrabold leading-tight text-[#00516A] md:text-4xl">
-            Service beyond expectations
+
+          <h2 className="mt-3 text-2xl font-extrabold text-[#00516A] md:text-3xl">
+            A Legacy of Co-operation
           </h2>
-          <p className="mt-5 text-base leading-8 text-[#52727D]">
-            We are committed to providing commercial banking services beyond
-            customer expectations in a distinctive way, with the aim of becoming
-            a leading co-operative bank in Kerala through continual improvement
-            and support from the society.
-          </p>
-          <p className="mt-4 text-sm leading-7 text-[#71868D]">
-            Editorial note: the supplied document phrases this policy as “We the
-            kadirur service co-operative bank…”. The wording above preserves its
-            stated intent while adapting the bank name reference for this
-            project. Please confirm the final approved wording with the society
-            before publishing.
-          </p>
         </div>
-        <div className="overflow-hidden rounded-3xl border border-[#D5E9ED] shadow-lg">
-          <img
-            src={qualityPolicyImage}
-            alt="Quality policy and trusted service"
-            className="h-[300px] w-full object-cover md:h-[420px]"
-          />
-        </div>
-      </section>
-      <section className="bg-[#F2FAFC] px-5 py-16 md:px-8 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex items-start gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#008BA5] text-white">
-              <Target size={28} />
-            </div>
-            <div>
-              <p className="mb-2 text-sm font-bold uppercase tracking-[.16em] text-[#008BA5]">
-                Continuous Improvement
-              </p>
-              <h2 className="text-3xl font-extrabold text-[#00516A] md:text-4xl">
-                Quality Objectives
-              </h2>
-              <p className="mt-3 max-w-2xl leading-7 text-[#52727D]">
-                The measurable objectives listed in the supplied “Employees web
-                01” document.
-              </p>
-            </div>
+
+        <div className="relative">
+          {/* TIMELINE LINE */}
+          <div className="absolute bottom-0 left-5 top-0 w-px bg-gradient-to-b from-[#008BA5] via-[#58C6D5] to-[#D5E9ED] md:left-1/2 md:-translate-x-1/2" />
+
+          <div className="space-y-10 md:space-y-12">
+            {milestones.map((item, index) => {
+              const Icon = item.icon;
+              const isLeft = index % 2 === 0;
+
+              return (
+                <article
+                  key={item.title}
+                  className={`relative flex items-start gap-6 pl-14 md:w-1/2 md:pl-0 ${
+                    isLeft ? "md:pr-12" : "md:ml-auto md:pl-12"
+                  }`}
+                >
+                  {!isLeft && (
+                    <div className="hidden md:block md:absolute md:left-[-20px] md:top-6 md:z-10 md:flex md:h-10 md:w-10 md:items-center md:justify-center md:rounded-full md:border-4 md:border-[#F4FAFC] md:bg-[#008BA5] md:text-white md:shadow-md">
+                      <Icon size={17} />
+                    </div>
+                  )}
+
+                  <div className="w-full rounded-2xl border border-[#D5E9ED] bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:p-6">
+                    <h3 className="mt-2 text-lg font-bold text-[#00516A] md:text-xl">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-7 text-[#52727D]">
+                      {item.content}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {objectives.map((item, index) => (
-              <article
-                key={item}
-                className="flex gap-4 rounded-2xl border border-[#D5E9ED] bg-white p-5 md:p-6"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7F7FA] font-extrabold text-[#008BA5]">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-                <div className="flex gap-3">
-                  <CheckCircle2
-                    className="mt-1 shrink-0 text-[#008BA5]"
-                    size={20}
-                  />
-                  <p className="leading-7 text-[#234956]">{item}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-900">
-            <strong>Before publishing:</strong> Please verify that the targets
-            and timeframes above are current and officially approved by the
-            society.
-          </div>
-          <Link
-            to="/about"
-            className="mt-8 inline-flex items-center gap-2 font-bold text-[#008BA5]"
-          >
-            <ArrowLeft size={18} /> Back to About the Society
-          </Link>
         </div>
       </section>
     </main>
   );
-}
+};
+
+export default FootPrints;
