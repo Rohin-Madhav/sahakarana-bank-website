@@ -69,7 +69,6 @@ export default function Navbar() {
           </div>
 
           <a
-            href="/documents/calendar.pdf"
             className="inline-flex shrink-0 items-center gap-2
               rounded-md bg-[#008BA5] px-4 py-2
               font-semibold text-white transition
@@ -205,7 +204,6 @@ export default function Navbar() {
 
           {/* Account opening CTA */}
           <Link
-            to="/account-opening"
             onClick={closeMenu}
             className="mt-2 rounded-md bg-[#008BA5]
               px-4 py-3 text-center text-sm

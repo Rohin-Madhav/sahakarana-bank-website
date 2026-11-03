@@ -16,8 +16,8 @@ import {
   Banknote,
   LockKeyhole,
   Monitor,
-  Icon,
   MapPin,
+  ExternalLink,
   Phone,
   ArrowUpRight,
 } from "lucide-react";
@@ -48,6 +48,7 @@ const communityServices = [
     icon: Store,
     title: "Neethi Consumer Store",
     location: "Orkkatteri",
+    mapUrl: "https://maps.app.goo.gl/KAEQX5wzGicRJjQL7",
     phone: "0496 2544323",
     description:
       "Everyday consumer products at reasonable prices to support the local community.",
@@ -56,6 +57,7 @@ const communityServices = [
     icon: HeartPulse,
     title: "Neethi Medical Store",
     location: "Azhiyur Chungam",
+    mapUrl: "https://maps.app.goo.gl/VTRkk6zkaXBHPqcZ7",
     phone: "7736706770",
     description:
       "Access to essential medicines through our community-focused medical store.",
@@ -64,6 +66,7 @@ const communityServices = [
     icon: FlaskConical,
     title: "Neethi Medical Lab",
     location: "Orkkatteri",
+    mapUrl: "https://maps.app.goo.gl/bGyFepQzAqc3gzyV8",
     phone: "9446267220",
     description:
       "Diagnostic services designed to make essential healthcare more accessible.",
@@ -72,6 +75,7 @@ const communityServices = [
     icon: HeartPulse,
     title: "Neethi Medical Store",
     location: "Kannookkara",
+    mapUrl: "https://maps.app.goo.gl/y8Gq5rwSMuUmuCsb9?g_st=aw",
     phone: "9497304002",
     description:
       "Supporting local healthcare needs through convenient access to essential medicines.",
@@ -108,9 +112,11 @@ const branches = [
 function SectionIntro({ eyebrow, title, description, centered = false }) {
   return (
     <div className={centered ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#008BA5] sm:text-xs">
-        {eyebrow}
-      </p>
+      {eyebrow && (
+        <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#008BA5] sm:text-xs">
+          {eyebrow}
+        </p>
+      )}
 
       <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#063B4A] sm:text-3xl lg:text-[2.15rem]">
         {title}
@@ -128,10 +134,8 @@ function SectionIntro({ eyebrow, title, description, centered = false }) {
 export default function Facilities() {
   return (
     <main className="overflow-hidden bg-white text-[#234956]">
-      {/* HERO WITH BACKGROUND IMAGE */}
+      {/* HERO */}
       <section className="relative isolate overflow-hidden">
-        {/* Background image */}
-        {/* Background image */}
         <div
           className="absolute inset-0 -z-20 bg-cover bg-center"
           style={{
@@ -140,7 +144,6 @@ export default function Facilities() {
           aria-hidden="true"
         />
 
-        {/* Teal and white overlay */}
         <div
           className="absolute inset-0 -z-10 bg-gradient-to-r from-[#E7F7FA]/95 via-[#E7F7FA]/80 to-[#00516A]/35"
           aria-hidden="true"
@@ -177,16 +180,20 @@ export default function Facilities() {
 
                   <div>
                     <h3 className="text-base font-bold">HEAD OFFICE</h3>
+
                     <p className="mt-1 text-sm leading-6 text-white/80">
                       Vatakara Block Employees Co Operative Society Ltd
-                      <br></br>
-                      No D2394 Orkkatteri Po, Kozhikode Dist, Pin 673501{" "}
-                      <br></br>Main Branch & Head Office Orkkatteri.
+                      <br />
+                      No D2394 Orkkatteri Po, Kozhikode Dist, Pin 673501
+                      <br />
+                      Main Branch & Head Office Orkkatteri.
                     </p>
-                    <p className="mt-3 inline-block text-sm font-semibold text-[#BCEAF1] hover:text-white">
+
+                    <p className="mt-3 text-sm font-semibold text-[#BCEAF1]">
                       Email: vbecsltd@gmail.com
                     </p>
-                    <p className="mt-3 inline-block text-sm font-semibold text-[#BCEAF1] hover:text-white">
+
+                    <p className="mt-3 text-sm font-semibold text-[#BCEAF1]">
                       Ph: 0496 2546120, 8547247120
                     </p>
                   </div>
@@ -194,30 +201,30 @@ export default function Facilities() {
               </div>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid min-w-0 gap-3 sm:grid-cols-2">
               {branches.map((branch) => (
                 <article
                   key={branch.name}
-                  className="rounded-xl border border-[#00516A] bg-[#00516A] p-5 text-white transition hover:border-[#008BA5] hover:shadow-md sm:p-6"
+                  className="min-w-0 rounded-xl border border-[#00516A] bg-[#00516A] p-5 text-white transition hover:border-[#008BA5] hover:shadow-md sm:p-6"
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h3 className="text-base font-bold leading-snug text-white">
-                        {branch.name}
-                      </h3>
-                      <h3 className="text-base font-bold leading-snug text-white">
-                        {branch.location}
-                      </h3>
-                    </div>
-                  </div>
+                  <h3 className="break-words text-base font-bold leading-snug text-white">
+                    {branch.name}
+                  </h3>
+
+                  {branch.location && (
+                    <p className="mt-1 text-sm text-white/80">
+                      {branch.location}
+                    </p>
+                  )}
 
                   <a
                     href={`tel:${branch.phone.replace(/\s/g, "")}`}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#BCEAF1] hover:text-white"
                   >
-                    Ph:
+                    <Phone size={16} />
                     {branch.phone}
                   </a>
+
                   <a
                     href={branch.mapUrl}
                     target="_blank"
@@ -226,6 +233,7 @@ export default function Facilities() {
                   >
                     <MapPin size={16} className="shrink-0" />
                     View Location
+                    <ExternalLink size={14} />
                   </a>
                 </article>
               ))}
@@ -243,62 +251,62 @@ export default function Facilities() {
             centered
           />
 
-          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
+          <div className="mt-9 grid items-stretch gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
             {communityServices.map((service) => {
               const Icon = service.icon;
 
               return (
                 <article
                   key={`${service.title}-${service.location}`}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00516A]/10"
+                  className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#D5E9ED] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  {/* Teal gradient header */}
-                  <div className="relative overflow-hidden bg-gradient-to-r from-[#003F53] via-[#00516A] to-[#008BA5] px-6 py-5">
-                    <div className="pointer-events-none absolute -right-6 -top-10 h-28 w-28 rounded-full border-[16px] border-white/[0.07]" />
+                  {/* Card Header */}
+                  <div className="relative flex min-h-[125px] items-center justify-between gap-4 overflow-hidden bg-gradient-to-r from-[#003F53] to-[#008BA5] px-5 py-6">
+                    <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full border-[18px] border-white/[0.06]" />
 
-                    <div className="relative flex items-center justify-between gap-3">
-                      <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#B9F4F8]">
-                        {service.category}
-                      </span>
-
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white ring-1 ring-white/20">
-                        <Icon size={21} strokeWidth={1.8} />
-                      </div>
-                    </div>
-
-                    <h3 className="relative mt-5 min-h-[3.5rem] text-xl font-semibold leading-snug text-white">
+                    <h3 className="relative max-w-[75%] text-lg font-semibold leading-snug text-white sm:text-xl">
                       {service.title}
                     </h3>
+
+                    <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white">
+                      <Icon size={22} strokeWidth={1.7} />
+                    </div>
                   </div>
 
-                  {/* Card content */}
-                  <div className="flex flex-1 flex-col px-6 py-5">
-                    <div className="flex flex-1 flex-col items-center text-center">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#D5E9ED] bg-[#F4FAFC] text-[#008BA5] transition duration-300 group-hover:border-[#58C6D5] group-hover:bg-[#E7F7FA]">
-                        <Icon size={29} strokeWidth={1.6} />
+                  {/* Card Content */}
+                  <div className="flex flex-1 flex-col p-5">
+                    {/* Location + Map Link */}
+                    <div className="mt-4 flex items-center justify-between gap-3">
+                      <div className="flex min-w-0 items-center gap-2 text-sm text-[#52727D]">
+                        <MapPin size={16} className="shrink-0 text-[#008BA5]" />
+                        <span className="truncate font-medium">
+                          {service.location}
+                        </span>
                       </div>
 
-                      <div className="mt-5 flex items-center justify-center gap-2 text-sm text-[#52727D]">
-                        <MapPin size={16} className="shrink-0 text-[#008BA5]" />
-                        <span className="font-medium">{service.location}</span>
-                      </div>
+                      <a
+                        href={service.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-[#008BA5] transition hover:text-[#003F53] hover:underline"
+                      >
+                        View Location
+                        <ExternalLink size={14} />
+                      </a>
                     </div>
 
-                    {/* Gradient call button */}
+                    {/* Phone */}
                     <a
                       href={`tel:${service.phone.replace(/\s/g, "")}`}
                       aria-label={`Call ${service.title}, ${service.location}`}
-                      className="mt-6 inline-flex items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-[#00516A] to-[#008BA5] px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:from-[#003F53] hover:to-[#00516A] hover:shadow-md"
+                      className="mt-5 flex items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-[#00516A] to-[#008BA5] px-4 py-3 text-sm font-semibold text-white transition hover:from-[#003F53] hover:to-[#00516A]"
                     >
                       <span className="flex items-center gap-2">
-                        <Phone size={16} />
+                        <Phone size={16} className="shrink-0" />
                         {service.phone}
                       </span>
 
-                      <ArrowUpRight
-                        size={17}
-                        className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      />
+                      <ArrowUpRight size={17} className="shrink-0" />
                     </a>
                   </div>
                 </article>
