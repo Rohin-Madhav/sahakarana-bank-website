@@ -1,34 +1,18 @@
 import React from "react";
 import { ArrowUpRight, Newspaper } from "lucide-react";
+import newsImage1 from "../assets/news/image-1.webp";
 
 const pressItems = [
   {
     title: "A New Milestone in Cooperative Banking",
     publication: "Demo Newspaper",
     date: "15 October 2026",
-    image: "/images/press/press-1.jpg",
+    image: newsImage1,
     description:
       "A glimpse into the society's journey of growth, community service, and financial empowerment.",
     link: "#",
   },
-  {
-    title: "Society Expands Its Community Services",
-    publication: "Demo Newspaper",
-    date: "08 September 2026",
-    image: "/images/press/press-2.jpg",
-    description:
-      "Highlighting the society's commitment to accessible services and the welfare of its members.",
-    link: "#",
-  },
-  {
-    title: "Supporting Local Communities Through Cooperation",
-    publication: "Demo Newspaper",
-    date: "22 August 2026",
-    image: "/images/press/press-3.jpg",
-    description:
-      "A feature on community initiatives and the role of cooperative values in everyday life.",
-    link: "#",
-  },
+ 
 ];
 
 const PressHighlights = () => {
