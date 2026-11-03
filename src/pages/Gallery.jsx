@@ -7,17 +7,7 @@ import galleryImage3 from "../assets/gallery/image-3.webp";
 import galleryImage4 from "../assets/gallery/image-4.webp";
 import galleryImage5 from "../assets/gallery/image-5.webp";
 
-
-const galleryImages = [
-  { src: galleryImage1, alt: "Society moments" },
-  { src: galleryImage2, alt: "Society events" },
-  { src: galleryImage3, alt: "Community activities" },
-  { src: galleryImage4, alt: "Society celebrations" },
-  { src: galleryImage5, alt: "Our branches" },
-  { src: "/images/gallery/image-6.jpg", alt: "Community memories" },
-  { src: "/images/gallery/image-7.jpg", alt: "Society gathering" },
-  { src: "/images/gallery/image-8.jpg", alt: "Society activities" },
-];
+const galleryImages = [{ src: galleryImage4, alt: "Society celebrations" }];
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -42,7 +32,7 @@ const Gallery = () => {
     <main className="min-h-screen bg-[#F4FAFC]">
       {/* Gallery Header */}
       <section className="bg-[#003F53] px-5 py-16 text-white md:py-20">
-        <div className="mx-auto max-w-7xl">       
+        <div className="mx-auto max-w-7xl">
           <h1 className="font-valeria text-4xl leading-tight md:text-6xl">
             Gallery
           </h1>
@@ -52,7 +42,6 @@ const Gallery = () => {
       {/* Image Gallery */}
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">
         <div className="mb-8 flex items-center justify-between">
-          
           <span className="text-sm text-[#52727D]">
             {galleryImages.length} Photos
           </span>
@@ -65,9 +54,7 @@ const Gallery = () => {
               type="button"
               onClick={() => setSelectedIndex(index)}
               className={`group relative overflow-hidden rounded-xl bg-[#E7F7FA] ${
-                index % 7 === 0
-                  ? "aspect-[3/4] sm:row-span-2"
-                  : "aspect-square"
+                index % 7 === 0 ? "aspect-[3/4] sm:row-span-2" : "aspect-square"
               }`}
             >
               <img

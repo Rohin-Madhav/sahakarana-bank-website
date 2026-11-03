@@ -8,6 +8,7 @@ import environmentImage from "../assets/social-initiative-3.webp";
 import communityImage from "../assets/social-initiative-4.webp";
 import qualityPolicyImage from "../assets/quality-policy.png";
 import whoWeAreImage from "../assets/who we are.webp";
+import coreValuesImage from "../assets/core-value.webp";
 
 import {
   ArrowRight,
@@ -466,12 +467,12 @@ The society holds a share capital of â‚¹ 2,34,78,690 and deposits amounting to â
             {/* LEFT - VISION & MISSION */}
             <div className="flex flex-col gap-6">
               {/* VISION CARD */}
-              <article className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-[#003F53] via-[#00516A] to-[#007D91] p-7 text-white shadow-lg shadow-[#003F53]/10 sm:p-9">
+              <article className="relative isolate overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#003F53] via-[#00516A] to-[#007D91] p-7 text-white shadow-lg shadow-[#003F53]/10 sm:p-9">
                 {/* Decorative circle */}
                 <div className="pointer-events-none absolute -right-16 -top-20 -z-10 h-64 w-64 rounded-full border-[35px] border-white/[0.06]" />
 
                 <div className="relative">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#8DE7F0]">
+                  <p className="text-[17px] font-bold uppercase tracking-[0.2em] text-[#8DE7F0]">
                     Our Vision
                   </p>
 
@@ -485,47 +486,52 @@ The society holds a share capital of â‚¹ 2,34,78,690 and deposits amounting to â
               </article>
 
               {/* MISSION CARD */}
-              <article className="relative overflow-hidden rounded-3xl border border-[#D5E9ED] bg-white p-7 shadow-sm sm:p-9">
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#008BA5]">
-                  Our Mission
-                </p>
+              <article className="relative isolate overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#003F53] via-[#00516A] to-[#007D91] p-7 text-white shadow-lg shadow-[#003F53]/10 sm:p-9">
+                {/* Decorative circle */}
+                <div className="pointer-events-none absolute -right-16 -top-20 -z-10 h-64 w-64 rounded-full border-[35px] border-white/[0.06]" />
 
-                <div className="mt-6 space-y-5">
-                  {/* Financial Empowerment */}
-                  <div>
-                    <h4 className="font-semibold text-[#00516A]">
-                      Financial Empowerment
-                    </h4>
+                <div className="relative">
+                  <p className="text-[17px] font-bold uppercase tracking-[0.2em] text-[#8DE7F0]">
+                    Our Mission
+                  </p>
 
-                    <p className="mt-1 text-sm leading-6 text-[#52727D]">
-                      Secure, high-yield deposit schemes and fair, accessible
-                      loan products tailored to our members' growth.
-                    </p>
-                  </div>
+                  <div className="mt-6 space-y-5">
+                    {/* Financial Empowerment */}
+                    <div>
+                      <h4 className="font-semibold text-white">
+                        Financial Empowerment
+                      </h4>
 
-                  {/* Healthcare Excellence */}
-                  <div>
-                    <h4 className="font-semibold text-[#00516A]">
-                      Healthcare Excellence
-                    </h4>
+                      <p className="mt-1 text-sm leading-6 text-white/80">
+                        Secure, high-yield deposit schemes and fair, accessible
+                        loan products tailored to our members' growth.
+                      </p>
+                    </div>
 
-                    <p className="mt-1 text-sm leading-6 text-[#52727D]">
-                      Reliable, affordable, high-quality diagnostic and
-                      pharmaceutical services through our co-operative medical
-                      labs and stores.
-                    </p>
-                  </div>
+                    {/* Healthcare Excellence */}
+                    <div>
+                      <h4 className="font-semibold text-white">
+                        Healthcare Excellence
+                      </h4>
 
-                  {/* Daily Essentials */}
-                  <div>
-                    <h4 className=" font-semibold text-[#00516A]">
-                      Daily Essentials
-                    </h4>
+                      <p className="mt-1 text-sm leading-6 text-white/80">
+                        Reliable, affordable, high-quality diagnostic and
+                        pharmaceutical services through our co-operative medical
+                        labs and stores.
+                      </p>
+                    </div>
 
-                    <p className="mt-1 text-sm leading-6 text-[#52727D]">
-                      Quality household groceries at reasonable prices through
-                      our retail outlets, supporting community welfare.
-                    </p>
+                    {/* Daily Essentials */}
+                    <div>
+                      <h4 className="font-semibold text-white">
+                        Daily Essentials
+                      </h4>
+
+                      <p className="mt-1 text-sm leading-6 text-white/80">
+                        Quality household groceries at reasonable prices through
+                        our retail outlets, supporting community welfare.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -547,54 +553,64 @@ The society holds a share capital of â‚¹ 2,34,78,690 and deposits amounting to â
       {/* CORE VALUES */}
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="mb-10 max-w-2xl">
-            <h2 className="mt-3 text-3xl font-semibold text-[#003F53] md:text-4xl">
-              Our Core Values
-            </h2>
-          </div>
-
-          {/* Values List */}
-          <div className="grid gap-x-12 gap-y-7 md:grid-cols-2">
-            {[
-              {
-                title: "Mutual Help",
-                description: "Believing in the power of growing together.",
-              },
-              {
-                title: "Transparency",
-                description:
-                  "Maintaining absolute integrity in financial and medical operations.",
-              },
-              {
-                title: "Affordability",
-                description:
-                  "Keeping health services and daily retail accessible to everyone.",
-              },
-              {
-                title: "Member First",
-                description:
-                  "Aligning every new venture with the welfare of our members.",
-              },
-            ].map((value, index) => (
-              <div
-                key={value.title}
-                className="flex items-start gap-4 border-b border-[#D5E9ED] pb-6"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7F7FA] text-sm font-semibold text-[#00516A]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-[#00516A]">
-                    {value.title}
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-7 text-[#52727D] md:text-base">
-                    {value.description}
-                  </p>
-                </div>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            {/* LEFT - IMAGE */}
+            <div className="relative">
+              <div className="group relative overflow-hidden rounded-3xl border border-[#D5E9ED] bg-[#F4FAFC] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#008BA5] hover:shadow-xl">
+                <img
+                  src={coreValuesImage}
+                  alt="Core values of Vatakara Block Employees Co-operative Society"
+                  className="h-[350px] w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 sm:h-[450px]"
+                  loading="lazy"
+                />
               </div>
-            ))}
+            </div>
+
+            {/* RIGHT - VALUES */}
+            <div>
+              <h2 className="text-3xl font-semibold text-[#003F53] md:text-4xl">
+                Our Core Values
+              </h2>
+              {/* Values List */}
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    title: "Mutual Help",
+                    description: "Believing in the power of growing together.",
+                  },
+                  {
+                    title: "Transparency",
+                    description:
+                      "Maintaining absolute integrity in financial and medical operations.",
+                  },
+                  {
+                    title: "Affordability",
+                    description:
+                      "Keeping health services and daily retail accessible to everyone.",
+                  },
+                  {
+                    title: "Member First",
+                    description:
+                      "Aligning every new venture with the welfare of our members.",
+                  },
+                ].map((value) => (
+                  <div
+                    key={value.title}
+                    className="group rounded-2xl border border-[#D5E9ED] bg-[#F4FAFC] p-5 transition duration-300 hover:border-[#58C6D5] hover:bg-white hover:shadow-md"
+                  >
+                    <div className="mb-4 h-1 w-10 rounded-full bg-[#008BA5] transition-all duration-300 group-hover:w-16" />
+
+                    <h3 className="text-lg font-semibold text-[#00516A]">
+                      {value.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-7 text-[#52727D]">
+                      {value.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
