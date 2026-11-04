@@ -102,7 +102,13 @@ export default function BoardOfDirectors() {
                   <h2 className="mt-2 text-lg font-semibold leading-snug text-white">
                     K Sasikumar
                   </h2>
-                  <p className="mt-1 text-sm text-white/60">9496661240</p>
+                  <a
+                    href="tel:+919496661240"
+                    className="mt-1 text-sm text-white/60 transition-colors hover:text-[#008BA5]"
+                    aria-label="Call K Sasikumar at 9496661240"
+                  >
+                    +91 9496661240
+                  </a>
                 </div>
               </div>
 
@@ -121,7 +127,13 @@ export default function BoardOfDirectors() {
                   <h2 className="mt-2 text-lg font-semibold leading-snug text-white">
                     M Vijayan Master
                   </h2>
-                  <p className="mt-1 text-sm text-white/60">9446645491</p>
+                  <a
+                    href="tel:+919446645491"
+                    className="mt-1 text-sm text-white/60 transition-colors hover:text-[#008BA5]"
+                    aria-label="Call M Vijayan Master at 9446645491"
+                  >
+                    +91 9446645491
+                  </a>
                 </div>
               </div>
             </div>
@@ -298,6 +310,14 @@ export default function BoardOfDirectors() {
               <h3 className="mt-2 text-xl font-semibold text-[#00516A]">
                 Aneesh Kumar
               </h3>
+
+              <a
+                href="tel:+919645161070"
+                className="mt-2 text-md font-bold text-[#00516A] transition-colors hover:text-[#008BA5]"
+                aria-label="Call Sumith Lal at 96451 61070"
+              >
+                Ph: 884-8946376
+              </a>
             </article>
 
             {/* ASSISTANT SECRETARY */}
@@ -315,6 +335,13 @@ export default function BoardOfDirectors() {
               <h3 className="mt-2 text-xl font-semibold text-[#00516A]">
                 Sumith Lal
               </h3>
+              <a
+                href="tel:+919645161070"
+                className="mt-2 text-md font-bold text-[#00516A] transition-colors hover:text-[#008BA5]"
+                aria-label="Call Sumith Lal at 96451 61070"
+              >
+                Ph: 96451 61070
+              </a>
             </article>
           </div>
         </div>
